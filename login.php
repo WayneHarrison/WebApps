@@ -16,38 +16,49 @@
   <link rel="stylesheet" href="css/milligram.css.map">
   <link rel="stylesheet" href="css/milligram.min.css.map">
   <link rel="stylesheet" href="css/main.css">
+  <!-- Script-->
+  <script type="text/javascript" src="js/myJS.js"></script>
 </head>
 <body>
   <main class ="wrapper">
     <nav class="navigation">
       <section class="container">
       <a class="navigation-title" href="index.html">
-        <h1 class="title">WebApps</h1>
+        <h1 class="title">JNReviews</h1>
         </a>
         <ul class="navigation-list float-right">
           <li class="navigation-item">
-            <a class="navigation-link" href="login.php">Login</a>
+            <a class="navigation-link" href="index.html">Home</a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link" href="downloads.html">Link 2</a>
+            <a class="navigation-link" href="#">Downloads</a>
           </li>
         </ul>
       </section>
     </nav>
-    <header class="header">
-      <section class="container">
-      <div class="MyJumbo">
-          <h1 class="title">Welcome</h1>
-          <p class="description"></p>
-          <img height="50%" width="50%" class="profile" src="images/moostang.png">
-        </br>
-          <a class="button button-outline" href="midpagetemplate.html" title="Reviews">Reviews</a>
+    <div class="container">
+      <div class="row">
+      <div class="column column-50">
+        <div class="MyJumbo">
+          <h3>Product 1</h3>
+            <img src="http://via.placeholder.com/350x350">
+          <a class="button button-outline" href="reviewtemplate.html">Take Me</a>
+        </div>
       </div>
-    </br>
+      <div class="column column-50">
+        <div class="MyJumbo">
+          <h3>Product 2</h3>
+            <img src="http://via.placeholder.com/350x350">
+          <a class="button button-outline" href="reviewtemplate.html">Take Me</a>
+        </div>
+      </div>
+    </div>
   </br>
 </br>
-    </section>
-    </header>
+      <div align="center">
+        <a class="button button-outline" href="reviews.html" title="BackToReviews">Back To Reviews</a>
+      </div>
+  </div>
   </main>
 </body>
 </html>
