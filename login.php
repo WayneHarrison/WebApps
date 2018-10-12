@@ -24,7 +24,7 @@
     <nav class="navigation">
       <section class="container">
       <a class="navigation-title" href="index.html">
-        <h1 class="title">JNReviews</h1>
+        <h1 class="title">Custom Imports</h1>
         </a>
         <ul class="navigation-list float-right">
           <li class="navigation-item">
@@ -38,26 +38,25 @@
     </nav>
     <div class="container">
       <div class="row">
-      <div class="column column-50">
+      <div class="column column-100">
         <div class="MyJumbo">
-          <h3>Product 1</h3>
-            <img src="http://via.placeholder.com/350x350">
-          <a class="button button-outline" href="reviewtemplate.html">Take Me</a>
-        </div>
-      </div>
-      <div class="column column-50">
-        <div class="MyJumbo">
-          <h3>Product 2</h3>
-            <img src="http://via.placeholder.com/350x350">
-          <a class="button button-outline" href="reviewtemplate.html">Take Me</a>
+          <form>
+  <fieldset>
+    <label for="EmailField">Email</label>
+    <input placeholder="example@gmail.com" id="EmailField" type="text">
+    <label for="PasswordField">Password</label>
+    <input id="PasswordField" type="password">
+    <div class="float-center">
+      <input class="button button-outline float-center" value="Login" type="submit">
+      <a class="button button-outline" href="register.php" title="RegisterPage">Register</a>
+    </div>
+  </fieldset>
+</form>
         </div>
       </div>
     </div>
   </br>
 </br>
-      <div align="center">
-        <a class="button button-outline" href="reviews.html" title="BackToReviews">Back To Reviews</a>
-      </div>
   </div>
   </main>
 </body>
