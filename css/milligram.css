@@ -116,8 +116,8 @@ input[type='reset'].button-outline:hover,
 input[type='submit'].button-outline:focus,
 input[type='submit'].button-outline:hover {
   background-color: transparent;
-  border-color: #606c76;
-  color: #606c76;
+  border-color: #8b0000;
+  color: #8b0000;
 }
 
 .button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover,
@@ -130,7 +130,7 @@ input[type='reset'].button-outline[disabled]:hover,
 input[type='submit'].button-outline[disabled]:focus,
 input[type='submit'].button-outline[disabled]:hover {
   border-color: inherit;
-  color: #9b4dca;
+  color: #8b0000;
 }
 
 .button.button-clear,
@@ -228,7 +228,7 @@ input[type='text']:focus,
 input[type='url']:focus,
 textarea:focus,
 select:focus {
-  border-color: #9b4dca;
+  border-color: #8b0000;
   outline: 0;
 }
 
