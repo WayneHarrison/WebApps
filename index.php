@@ -1,4 +1,7 @@
 <!DOCTYPE HTML>
+<?php
+  require "login.php";
+?>
 <html>
 <head>
   <title>JNReviews</title>

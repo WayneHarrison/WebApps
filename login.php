@@ -47,10 +47,17 @@
     <label for="passwordField">Password</label>
     <input id="passwordField" type="password">
     <div class="float-center">
-      <button class="button button-outline float-center" name="loginButton" value="Login" type="submit">
+      <button class="button button-outline float-center" name="loginButton" value="Login" type="submit">Login</button>
       <a class="button button-outline" href="register.php" title="RegisterPage">Register</a>
     </div>
   </fieldset>
+</form>
+<form action="includes/logout.inc.php" method="post">
+<fieldset>
+<div class="float-center">
+<button class="button button-outline float-center" name="logoutButton" value="Logout" type="submit">logout</button>
+</div>
+</fieldset>
 </form>
         </div>
       </div>

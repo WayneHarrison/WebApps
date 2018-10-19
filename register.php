@@ -40,20 +40,22 @@
       <div class="row">
       <div class="column column-100">
         <div class="MyJumbo">
-          <form>
+          <form action="includes/signup.inc.php" method="post">
   <fieldset>
-    <label for="NameField">Name</label>
-    <input placeholder="John Doe" id="NameField" type="text">
-    <label for="AddressField">Address</label>
-    <input placeholder="1 Fakestreet" id="AddressField" type="text">
-    <label for="PCField">Postcode</label>
-    <input id="PCField" type="text">
-    <label for="EmailField">Email</label>
-    <input placeholder="example@gmail.com" id="EmailField" type="text">
-    <label for="PasswordField">Password</label>
-    <input id="PasswordField" type="password">
+    <label for="nameField">Name</label>
+    <input placeholder="John Doe" id="nameField" type="text">
+    <label for="addressField">Address</label>
+    <input placeholder="1 Fakestreet" id="addressField" type="text">
+    <label for="pcField">Postcode</label>
+    <input id="pcField" type="text">
+    <label for="emailField">Email</label>
+    <input placeholder="example@gmail.com" id="emailField" type="text">
+    <label for="passwordField">Password</label>
+    <input id="passwordField" type="password">
+    <label for="cpasswordField">Confirm Password</label>
+    <input id="cpasswordField" type="password">
     <div class="float-center">
-      <a class="button button-outline" href="register.php" title="RegisterPage">Register</a>
+      <button class="button button-outline" name="registerButton" type="submit" >Register</button>
     </div>
   </fieldset>
 </form>
