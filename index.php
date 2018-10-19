@@ -26,10 +26,13 @@
         </a>
         <ul class="navigation-list float-right">
           <li class="navigation-item">
+            <a class="navigation-link" href="products.php">Products</a>
+          </li>
+          <li class="navigation-item">
             <a class="navigation-link" href="login.php">Login</a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link" href="downloads.html">Link 2</a>
+            <a class="navigation-link" href="register.php">Register</a>
           </li>
         </ul>
       </section>

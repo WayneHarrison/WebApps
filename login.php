@@ -40,14 +40,14 @@
       <div class="row">
       <div class="column column-100">
         <div class="MyJumbo">
-          <form>
+          <form action="includes/login.inc.php" method="post">
   <fieldset>
-    <label for="EmailField">Email</label>
-    <input placeholder="example@gmail.com" id="EmailField" type="text">
-    <label for="PasswordField">Password</label>
-    <input id="PasswordField" type="password">
+    <label for="emailID">Email</label>
+    <input placeholder="example@gmail.com" id="emailID" type="text">
+    <label for="passwordField">Password</label>
+    <input id="passwordField" type="password">
     <div class="float-center">
-      <input class="button button-outline float-center" value="Login" type="submit">
+      <button class="button button-outline float-center" name="loginButton" value="Login" type="submit">
       <a class="button button-outline" href="register.php" title="RegisterPage">Register</a>
     </div>
   </fieldset>
