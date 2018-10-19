@@ -28,7 +28,7 @@
         </a>
         <ul class="navigation-list float-right">
           <li class="navigation-item">
-            <a class="navigation-link" href="index.html">Home</a>
+            <a class="navigation-link" href="index.php">Home</a>
           </li>
           <li class="navigation-item">
             <a class="navigation-link" href="#">Downloads</a>
