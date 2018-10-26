@@ -11,8 +11,9 @@ if (isset($_POST['registerButton'])) {
   $cpassword = $_POST['cpassword'];
 
   //error handlers
-  if(empty($name) || empty($address) || empty($postcode) || empty($email) || empty($password) || empty($cpassword)) {
-    header("Location: ../register.php?error=emptyfields&name=".$name."&address=".$address."&postcode".$postcode."&email".$email);
+  if (empty($name) || empty($address) || empty($postcode) || empty($email) || empty($password) || empty($cpassword)){
+      header("Location: ../register.php?error=emptyfields&name=".$name."&address".$address."&postcode".$postcode."&email".$email);
+
   }
 
 }
