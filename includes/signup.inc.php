@@ -12,7 +12,7 @@ if (isset($_POST['registerButton'])) {
 
   //error handlers
   if (empty($name) || empty($address) || empty($postcode) || empty($email) || empty($password) || empty($cpassword)){
-      header("Location: ../register.php?error=emptyfields&name=".$name."&address".$address."&postcode".$postcode."&email".$email);
+      header("Location: register.php?error=emptyfields&name=".$name."&address".$address."&postcode".$postcode."&email".$email);
 
   }
 
