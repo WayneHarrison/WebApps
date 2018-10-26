@@ -1,9 +1,9 @@
 <?php
 
-$servername ="heroku_f01a4c8c373e40c";
-$dBUsername ="b50bdeb4a006e5";
-$dBPassword ="92e202b8";
-$dBName ="WebDB";
+$servername ="ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+$dBUsername ="cxvgnzbdx933nx2c";
+$dBPassword ="pzgz4db5bifleb6r";
+$dBName ="ejyc09067f68qv1j";
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
 
 if (!$conn) {
