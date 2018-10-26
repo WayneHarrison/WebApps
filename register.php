@@ -49,17 +49,17 @@
           <form action="includes/signup.inc.php" method="post">
   <fieldset>
     <label for="nameField">Name</label>
-    <input placeholder="John Doe" id="nameField" type="text">
+    <input placeholder="John Doe" id="nameField" type="text" name="name">
     <label for="addressField">Address</label>
-    <input placeholder="1 Fakestreet" id="addressField" type="text">
+    <input placeholder="1 Fakestreet" id="addressField" type="text" name="address">
     <label for="pcField">Postcode</label>
-    <input id="pcField" type="text">
+    <input id="pcField" type="text" name="postcode">
     <label for="emailField">Email</label>
-    <input placeholder="example@gmail.com" id="emailField" type="text">
+    <input placeholder="example@gmail.com" id="emailField" type="text" name="email">
     <label for="passwordField">Password</label>
-    <input id="passwordField" type="password">
+    <input id="passwordField" type="password" name="password">
     <label for="cpasswordField">Confirm Password</label>
-    <input id="cpasswordField" type="password">
+    <input id="cpasswordField" type="password" name="cpassword">
     <div class="float-center">
       <button class="button button-outline" name="registerButton" type="submit">Register</button>
     </div>
