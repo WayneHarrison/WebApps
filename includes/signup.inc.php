@@ -31,13 +31,7 @@ if (isset($_POST['registerButton'])) {
     header("Location: ../register.php?error=passwordcheck&name=".$name."&address".$address."&postcode".$postcode."&email".$email);
     exit();
   }
-      
-        }
-      }
-    }
-  }
 
-}
-}
+        }
 
 ?>
