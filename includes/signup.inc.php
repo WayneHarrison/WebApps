@@ -31,15 +31,6 @@ if (isset($_POST['registerButton'])) {
     header("Location: ../register.php?error=passwordcheck&name=".$name."&address".$address."&postcode".$postcode."&email".$email);
     exit();
   }
-    else {
-      mysqli_stmt_bind_param($stmt, "s", $email);
-      mysqli_stmt_execute($stmt);
-      mysqli_stmt_store_result($stmt);
-      $resultCheck = mysqli_stmt_num_rows($stmt);
-      if($resultCheck > 0 ) {
-        header("Location: ../register.php?error=emailTaken");
-        exit();
-      }
       else {
         $sql ="INSERT INTO user (userName, userAddress, userPostCode, userEmail, userPassword) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_stmt_init($conn);
