@@ -23,7 +23,7 @@ if (isset($_POST['registerButton'])) {
     header("Location: ../register.php?error=invalidmail&name=".$name."&address".$address."&postcode".$postcode);
     exit();
   }
-  else if (!preg_match("/^[a-zA-Z]*$/", $name)) {
+  else if (!preg_match("/^[a-zA-Z\s]*$/", $name)) {
     header("Location: ../register.php?error=invalidname&address="."&address".$address."&postcode".$postcode."&email".$email);
     exit();
   }
