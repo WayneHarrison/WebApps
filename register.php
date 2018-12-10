@@ -36,9 +36,6 @@
           <li class="navigation-item">
             <a class="navigation-link" href="login.php">Login</a>
           </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="register.php">Register</a>
-          </li>
         </ul>
       </section>
     </nav>
