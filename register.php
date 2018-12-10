@@ -27,7 +27,7 @@
         <h1 class="title">WebApps</h1>
         </a>
         <div class="dropdown">
-          <p class="navigation-item">Menu</p>
+          <p class="navigation-item" font color="white">Menu</p>
           <div class="dropdown-content">
         <ul class="navigation-list float-right">
           <li class="navigation-item">
