@@ -48,7 +48,7 @@ if (isset($_POST['registerButton'])) {
         exit();
       }
       else {
-        $sql ="INSERT INTO users (userName, userAddress, userPostCode, userEmail, userPassword) VALUES (?, ?, ?, ?, ?)";
+        $sql ="INSERT INTO user (userName, userAddress, userPostCode, userEmail, userPassword) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)){
           header("Location: ../register.php?error=sqlerror");
