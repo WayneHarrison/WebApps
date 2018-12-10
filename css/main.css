@@ -400,3 +400,21 @@ color:#f4f5f6
 {
   border-radius: 50%
 }
+/* On hover drop down item*/
+.dropdown {
+ padding-top: 12px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: ##8b0000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

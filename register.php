@@ -26,6 +26,9 @@
       <a class="navigation-title" href="index.html">
         <h1 class="title">WebApps</h1>
         </a>
+        <div class="dropdown">
+          <p class="navigation-item">Menu</p>
+          <div class="dropdown-content">
         <ul class="navigation-list float-right">
           <li class="navigation-item">
             <a class="navigation-link" href="index.php">Home</a>
@@ -36,6 +39,8 @@
           <li class="navigation-item">
             <a class="navigation-link" href="login.php">Login</a>
           </li>
+        </div>
+        </div>
         </ul>
       </section>
     </nav>
