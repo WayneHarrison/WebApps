@@ -35,7 +35,7 @@ if (isset($_POST['registerButton'])) {
     $sql ="SELECT userEmail FROM user WHERE userEmail=?";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
-      header("Location: ../register.php?error=sqlerror");
+      header("Location: ../register.php?error=sqlerror1");
       exit();
     }
     else {
@@ -51,7 +51,7 @@ if (isset($_POST['registerButton'])) {
         $sql ="INSERT INTO user (userName, userAddress, userPostCode, userEmail, userPassword) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)){
-          header("Location: ../register.php?error=sqlerror");
+          header("Location: ../register.php?error=sqlerror2");
           exit();
         }
         else {
