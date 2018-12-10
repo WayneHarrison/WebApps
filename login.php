@@ -28,7 +28,7 @@
         </a>
         <ul class="navigation-list float-right">
           <div class="dropdown">
-            <p class="navigation-item" font color="white">Menu</p>
+            <p class="navigation-item">Menu</p>
             <div class="dropdown-content">
           <li class="navigation-item">
             <a class="navigation-link" href="index.php">Home</a>
