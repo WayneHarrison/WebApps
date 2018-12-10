@@ -55,8 +55,7 @@ if (isset($_POST['registerButton'])) {
           exit();
         }
         else {
-          $hashedPwd = password_hash($password, PASSWORD_DEFAULT)
-
+          $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
           mysqli_stmt_bind_param($stmt, "sssss",$name, $address, $postcode, $email, $hashedPwd);
           mysqli_stmt_execute($stmt);
           header("Location: ../register.php?success");
