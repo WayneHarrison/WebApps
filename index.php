@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>JNReviews</title>
+  <title>Custom Imports</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" charset="UTF-8">
@@ -21,7 +21,7 @@
   <main class ="wrapper">
     <nav class="navigation">
       <section class="container">
-      <a class="navigation-title" href="index.html">
+      <a class="navigation-title" href="index.php">
         <h1 class="title">WebApps</h1>
         </a>
         <ul class="navigation-list float-right">
