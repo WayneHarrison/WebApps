@@ -26,23 +26,20 @@
       <a class="navigation-title" href="index.html">
         <h1 class="title">WebApps</h1>
         </a>
-        <div class="dropdown">
-          <p class="navigation-item">Menu</p>
-          <div class="dropdown-content">
-            <li class="navigation-item">
-              <a class="navigation-link" href="index.php">Home</a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="products.php">Products</a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="login.php">Login</a>
-            </li>
-            <li class="navigation-item">
-              <a class="navigation-link" href="register.php">Register</a>
-            </li>
-      </div>
-        </div>
+        <ul class="navigation-list float-right">
+          <li class="navigation-item">
+            <a class="navigation-link" href="index.php">Home</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="products.php">Products</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="login.php">Login</a>
+          </li>
+          <li class="navigation-item">
+            <a class="navigation-link" href="register.php">Register</a>
+          </li>
+        </ul>
       </section>
     </nav>
     <div class="container">
