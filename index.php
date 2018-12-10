@@ -34,6 +34,7 @@
           <li class="navigation-item">
             <a class="navigation-link" href="login.php">Login</a>
           </li>
+        </br>
           <li class="navigation-item">
             <a class="navigation-link" href="register.php">Register</a>
           </li>
