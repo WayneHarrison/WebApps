@@ -33,21 +33,21 @@ if (isset($_POST['registerButton'])) {
               }
   else {
 
-    $sql "SELECT userEmail FROM user where userEmail=?";
+    $sql "SELECT userEmail FROM user WHERE userEmail=?";
     $stmt = mysqli_stmt_init($con);
       if (!mysqli_stmt_prepare($stmt, $sql)){
-    header("Location: ../register.php?error=sqlerror");
+      header("Location: ../register.php?error=sqlerror");
       exit();
       }
-//        else {
-//        mysqli_stmt_bind_param($stmt, "s", $email);
-//        mysqli_stmt_execute($stmt);
-//        mysqli_stmt_store_result($stmt);
-//        $resultcheck = mysqli_stmt_num_rows($stmt);
-//          if ($resultcheck > 0){
-//          header("Location: ../register.php?error=emailtaken");
-//          exit();
-//            }
+        else {
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+        $resultcheck = mysqli_stmt_num_rows($stmt);
+          if ($resultcheck > 0){
+          header("Location: ../register.php?error=emailtaken");
+          exit();
+            }
 //            else {
 //            $sql = "INSERT INTO user (userName, userAddress, userPostCode, userEmail, userPassword) VALUES (?, ?, ?, ?, ?)"
 //            $stmt = mysqli_stmt_init($con);
