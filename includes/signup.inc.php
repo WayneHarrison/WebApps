@@ -31,14 +31,14 @@ if (isset($_POST['registerButton'])) {
               header("Location: ../register.php?error=passwordcheck&name=".$name."&address".$address."&postcode".$postcode."&email".$email);
               exit();
               }
-//  else {
-//
-//    $sql "SELECT userEmail FROM user where userEmail=?";
-//    $stmt = mysqli_stmt_init($con);
-//      if (!mysqli_stmt_prepare($stmt, $sql)){
-//      header("Location: ../register.php?error=sqlerror");
-//      exit();
-//      }
+  else {
+
+    $sql "SELECT userEmail FROM user where userEmail=?";
+    $stmt = mysqli_stmt_init($con);
+      if (!mysqli_stmt_prepare($stmt, $sql)){
+    header("Location: ../register.php?error=sqlerror");
+      exit();
+      }
 //        else {
 //        mysqli_stmt_bind_param($stmt, "s", $email);
 //        mysqli_stmt_execute($stmt);
