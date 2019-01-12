@@ -15,10 +15,6 @@ if (isset($_POST['registerButton'])) {
         header("Location: ../register.php?error=emptyfields&name=".$name."&address".$address."&postcode".$postcode."&email".$email);
         exit();
       }
-        else if(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z]*$/", $name)){
-        header("Location: ../register.php?error=invalidmailname=&address".$address."&postcode".$postcode);
-        exit();
-        }
           else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
           header("Location: ../register.php?error=invalidmail&name=".$name."&address".$address."&postcode".$postcode);
           exit();
@@ -35,39 +31,37 @@ if (isset($_POST['registerButton'])) {
 
       $sql = "SELECT userEmail FROM user WHERE userEmail=?";
       $stmt = mysqli_stmt_init($conn);
-      if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../register.php?error=SQLError");
-        exit();
-      }
-
-      }
-        else {
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_store_result($stmt);
-        $resultcheck = mysqli_stmt_num_rows($stmt);
-          if ($resultcheck > 0){
-          header("Location: ../register.php?error=emailtaken");
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+          header("Location: ../register.php?error=SQLError");
           exit();
-            }
+        }
         else {
-            $sql = "INSERT INTO user (userName, userAddress, userPostCode, userEmail, userPassword) VALUES (?, ?, ?, ?, ?)"
-            $stmt = mysqli_stmt_init($conn);
-              if (!mysqli_stmt_prepare($stmt, $sql)) {
-              header("Location: ../register.php?error=sqlerror2");
+          mysqli_stmt_bind_param($stmt, "s", $email);
+          mysqli_stmt_execute($stmt);
+          mysqli_stmt_store_result($stmt);
+          $resultCheck = mysqli_stmt_num_rows($stmt);
+            if ($resultCheck > 0) {
+              header("Location: ../register.php?error=EmailTaken");
               exit();
             }
-                else{
+            else {
+              $sql = "INSERT INTO user (userName, userAddress, userPostCode, userEmail, userPassword) VALUES (?, ?, ?, ?, ?)";
+              $stmt = mysqli_stmt_init($conn);
+              if (!mysqli_stmt_prepare($stmt, $sql)) {
+                header("Location: ../register.php?error=SQLError2");
+                exit();
+              }
+              else {
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                  $hashedpwd= password_hash($password, PASSWORD_DEFAULT)
-
-                  mysqli_stmt_bind_param($stmt, "sssss",$name, $address, $postcode, $email, $hashedpwd );
-                  mysqli_stmt_execute($stmt);
-                  header("Location: ../register.php?signup=success");
-                  exit();
-                }
+                mysqli_stmt_bind_param($stmt, "sssss", $name, $address, $postcode, $email, $hashedPassword);
+                mysqli_stmt_execute($stmt);
+                header("Location: ../register.php?signup=success");
+                exit();
               }
             }
+          }
+        }
           mysqli_stmt_close($stmt);
           mysqli_close($conn);
         }
