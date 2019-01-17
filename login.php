@@ -54,9 +54,9 @@ session_start();
           <form action="includes/login.inc.php" method="post">
   <fieldset>
     <label for="emailField">Email</label>
-    <input placeholder="example@gmail.com" id="emailField" type="text">
+    <input placeholder="example@gmail.com" id="emailField" type="text" name="emailField">
     <label for="passwordField">Password</label>
-    <input id="passwordField" type="password">
+    <input id="passwordField" type="password" name="passwordField">
     <div class="float-center">
       <button class="button button-outline float-center" name="loginButton" value="Login" type="submit">Login</button>
       <a class="button button-outline" href="register.php" title="RegisterPage">Register</a>
