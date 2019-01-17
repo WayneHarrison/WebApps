@@ -53,8 +53,8 @@ session_start();
         <div class="MyJumbo">
           <form action="includes/login.inc.php" method="post">
   <fieldset>
-    <label for="emailID">Email</label>
-    <input placeholder="example@gmail.com" id="emailID" type="text">
+    <label for="emailField">Email</label>
+    <input placeholder="example@gmail.com" id="emailField" type="text">
     <label for="passwordField">Password</label>
     <input id="passwordField" type="password">
     <div class="float-center">

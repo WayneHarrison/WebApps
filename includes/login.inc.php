@@ -4,7 +4,7 @@ if(isset($_POST['loginButton'])) {
 
   require 'dbh.inc.php';
 
-  $email = $_POST['emailID'];
+  $email = $_POST['emailField'];
   $password = $_POST['passwordField'];
 
   if (empty($email)) {
