@@ -7,8 +7,12 @@ if(isset($_POST['loginButton'])) {
   $email = $_POST['emailID'];
   $password = $_POST['passwordField'];
 
-  if (empty($email) || empty($password)) {
-    header("Location: ../login.php?error=missingfields");
+  if (empty($email)) {
+    header("Location: ../login.php?error=missingemail");
+    exit();
+  }
+  else if (empty($password)) {
+    header("Location: ../login.php?error=missingpassword");
     exit();
   }
     else{
