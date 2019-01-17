@@ -5,7 +5,7 @@ if(isset($_POST['loginButton'])) {
   require 'dbh.inc.php';
 
   $email = $_POST['emailID'];
-  $password = $_POST['passwordField']
+  $password = $_POST['passwordField'];
 
   if (empty($email) || empty($password)) {
     header("Location: ../login.php?error=missingfields");
