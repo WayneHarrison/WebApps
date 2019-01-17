@@ -1,7 +1,9 @@
 <?php
 
 if(isset($_POST['loginButton'])) {
+
   require 'dbh.inc.php';
+
   $email = $_POST['emailID'];
   $password = $_POST['passwordField']
 
@@ -10,7 +12,7 @@ if(isset($_POST['loginButton'])) {
     exit();
   }
     else{
-      $sql ="SELECT * FROM users WHERE userEmail = ?;";
+      $sql ="SELECT * FROM users WHERE userEmail=?;";
       $stmt = mysqli_stmt_init($conn);
       if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("Location: ../login.php?error=SQLError");
@@ -29,8 +31,8 @@ if(isset($_POST['loginButton'])) {
             }
             else if ($pwdCheck == true) {
               session_start();
-              $_SESSION['userID'] = $row['userID'];
-              $_SESSION['userName'] = $row['userName'];
+              $_SESSION['usersID'] = $row['userID'];
+              $_SESSION['usersName'] = $row['userName'];
 
               header("Location: ../login.php?login=success");
               exit();
@@ -39,7 +41,6 @@ if(isset($_POST['loginButton'])) {
               header("Location: ../login.php?error=WrongPassword");
               exit();
             }
-
         }
         else {
           header("Location: ../login.php?error=NoUser");
