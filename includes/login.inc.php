@@ -15,7 +15,6 @@ if(isset($_POST['loginButton'])) {
     header("Location: ../login.php?error=missingpassword");
     exit();
   }
-  //errors from here
     else{
       $sql ="SELECT * FROM user WHERE userEmail=?;";
       $stmt = mysqli_stmt_init($conn);
@@ -27,7 +26,7 @@ if(isset($_POST['loginButton'])) {
 
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
-        $results = mysqli_stmt_get_result($stmt);
+        $result = mysqli_stmt_get_result($stmt);
         if ($row = mysqli_fetch_assoc($result)) {
             $pwdCheck = password_verify($password, $row['userPassword']);
             if ($pwdCheck == false) {
