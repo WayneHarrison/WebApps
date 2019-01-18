@@ -15,8 +15,9 @@ if(isset($_POST['loginButton'])) {
     header("Location: ../login.php?error=missingpassword");
     exit();
   }
+  //errors from here
     else{
-      $sql ="SELECT * FROM users WHERE userEmail=?;";
+      $sql ="SELECT * FROM users WHERE userEmail=?";
       $stmt = mysqli_stmt_init($conn);
       if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("Location: ../login.php?error=SQLError");
