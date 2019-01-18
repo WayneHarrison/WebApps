@@ -23,16 +23,33 @@
   <main class ="wrapper">
     <nav class="navigation">
       <section class="container">
-      <a class="navigation-title" href="index.html">
-        <h1 class="title">Webapps</h1>
+      <a class="navigation-title" href="index.php">
+        <h1 class="title">WebApps</h1>
         </a>
         <ul class="navigation-list float-right">
+          <div class="dropdown">
+            <p class="navigation-item">Menu</p>
+            <div class="dropdown-content">
           <li class="navigation-item">
-            <a class="navigation-link" href="index.html">Home</a>
+            <a class="navigation-link" href="products.php">Products</a>
           </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="reviews.html">Item 2</a>
-          </li>
+          <?php
+            if(isset($_SESSION['usersID'])){
+              echo'<li class="navigation-item">
+                <a class="navigation-link" formaction"logout.inc.php">Logout</a>
+              </li>'; }
+              else {
+                echo'<li class="navigation-item">
+                  <a class="navigation-link" href="login.php">Login</a>
+                </li>
+              </br>
+                <li class="navigation-item">
+                  <a class="navigation-link" href="register.php">Register</a>
+                </li>';
+              }
+          ?>
+        </div>
+        </div>
         </ul>
       </section>
     </nav>

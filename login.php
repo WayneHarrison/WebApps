@@ -34,16 +34,25 @@ session_start();
             <p class="navigation-item">Menu</p>
             <div class="dropdown-content">
           <li class="navigation-item">
-            <a class="navigation-link" href="index.php">Home</a>
-          </li>
-          <li class="navigation-item">
             <a class="navigation-link" href="products.php">Products</a>
           </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="register.php">Register</a>
-          </li>
+          <?php
+            if(isset($_SESSION['usersID'])){
+              echo'<li class="navigation-item">
+                <a class="navigation-link" formaction"logout.inc.php">Logout</a>
+              </li>'; }
+              else {
+                echo'<li class="navigation-item">
+                  <a class="navigation-link" href="login.php">Login</a>
+                </li>
+              </br>
+                <li class="navigation-item">
+                  <a class="navigation-link" href="register.php">Register</a>
+                </li>';
+              }
+          ?>
         </div>
-          <div>
+        </div>
         </ul>
       </section>
     </nav>
