@@ -35,7 +35,7 @@ session_start();
             <a class="navigation-link" href="products.php">Products</a>
           </li>
           <?php
-            if(isset($_SESSION['userID'])){
+            if(isset($_SESSION['usersID'])){
               echo'<li class="navigation-item">
                 <a class="navigation-link" formaction"logout.inc.php">Logout</a>
               </li>'; }
@@ -59,7 +59,7 @@ session_start();
       <div class="MyJumbo">
         <h1 class="title">Custom Imports</h1>
         <?php
-        if (isset($_SESSION['userID'])){
+        if (isset($_SESSION['usersID'])){
           echo '<p class="description">You are logged in.</p>';
         } else {
           echo '<p class="description">You are logged out.</p>';
