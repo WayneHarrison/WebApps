@@ -419,3 +419,11 @@ color:#f4f5f6
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+.signuperror {
+  color:#FF0000;
+}
+
+.signupsuccess {
+  color:#0B6623;
+}
