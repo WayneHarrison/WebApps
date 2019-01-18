@@ -60,30 +60,30 @@ session_start();
       <div class="row">
       <div class="column column-100">
         <div class="MyJumbo">
+          <?php
+          if(isset($_GET['error'])){
+            if ($_GET['error'] == "emptyfields"){
+              echo '<p class="signuperror">Missing fields!</p>';
+            }
+            else if($_GET['error'] == "invalidmail") {
+              echo '<p class="signuperror">Invalid Email!</p>';
+            }
+            else if($_GET['error'] == "invalidname") {
+              echo '<p class="signuperror">Invalid Name!</p>';
+            }
+            else if($_GET['error'] == "passwordcheck") {
+              echo '<p class="signuperror">Password do not match!</p>';
+            }
+            else if($_GET['error'] == "EmailTaken") {
+              echo '<p class="signuperror">User already registered!</p>';
+            }
+          }
+          else if ($_GET["signup"] == "success") {
+            echo '<p class="signupsuccess">Sign up successful!</p>';
+          }
+          ?>
           <form action="includes/signup.inc.php" method="post">
   <fieldset>
-    <?php
-      if(isset($_GET['error'])){
-        if (isset($_GET['error'] == "emptyfields"){
-          echo '<p class="signuperror">Missing fields!</p>';
-        }
-        else if($_GET['error'] == "invalidmail") {
-          echo '<p class="signuperror">Invalid Email!</p>';
-        }
-        else if($_GET['error'] == "invalidname") {
-          echo '<p class="signuperror">Invalid Name!</p>';
-        }
-        else if($_GET['error'] == "passwordcheck") {
-          echo '<p class="signuperror">Password do not match!</p>';
-        }
-        else if($_GET['error'] == "EmailTaken") {
-          echo '<p class="signuperror">User already registered!</p>';
-        }
-      }
-      else if ($_GET["signup"] == "success") {
-        echo '<p class="signupsuccess">Sign up successful!</p>';
-      }
-      ?>
     <label for="nameField">Name</label>
     <input placeholder="John Doe" id="nameField" type="text" name="name">
     <label for="addressField">Address</label>
