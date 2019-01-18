@@ -34,13 +34,21 @@ session_start();
           <li class="navigation-item">
             <a class="navigation-link" href="products.php">Products</a>
           </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="login.php">Login</a>
-          </li>
-        </br>
-          <li class="navigation-item">
-            <a class="navigation-link" href="register.php">Register</a>
-          </li>
+          <?php
+            if(isset($_SESSION['userID'])){
+              echo'<li class="navigation-item">
+                <a class="navigation-link" formaction"logout.inc.php">Logout</a>
+              </li>'; }
+              else {
+                echo'<li class="navigation-item">
+                  <a class="navigation-link" href="login.php">Login</a>
+                </li>
+              </br>
+                <li class="navigation-item">
+                  <a class="navigation-link" href="register.php">Register</a>
+                </li>';
+              }
+          ?>
         </div>
         </div>
         </ul>
@@ -50,8 +58,14 @@ session_start();
       <section class="container">
       <div class="MyJumbo">
         <h1 class="title">Custom Imports</h1>
+        <?php
+        if (isset($_SESSION['userID'])){
+          echo '<p class="description">You are logged in.</p>';
+        } else {
+          echo '<p class="description">You are logged out.</p>';
+        }
 
-        <p class="description"></p>
+        ?>
         <img class="profile" src="images/moostang.png">
         </br>
           <a class="button button-outline" href="midpagetemplate.html" title="Reviews">Reviews</a>
