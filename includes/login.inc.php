@@ -38,7 +38,7 @@ if(isset($_POST['loginButton'])) {
               $_SESSION['usersID'] = $row['userID'];
               $_SESSION['usersName'] = $row['userName'];
 
-              header("Location: ../login.php?login=success");
+              header("Location: ../index.php?login=success");
               exit();
             }
             else {
