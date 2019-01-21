@@ -122,7 +122,8 @@
  float:left;
  margin-bottom:0;
  margin-left:1rem;
- position:absolute;
+ padding-right: 1rem;
+ position:relative;
  color:#fff;
 }
 .navigation .img {
