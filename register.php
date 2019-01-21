@@ -39,7 +39,7 @@ session_start();
           <?php
             if(isset($_SESSION['usersID'])){
               echo'<li class="navigation-item">
-                <a class="navigation-link" href="logout.inc.php">Logout</a>
+                <a class="navigation-link" href="includes/logout.inc.php">Logout</a>
               </li>'; }
               else {
                 echo'<li class="navigation-item">
