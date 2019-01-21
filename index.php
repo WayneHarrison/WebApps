@@ -41,8 +41,10 @@ session_start();
               </li>'; }
               else {
                 echo'<li class="navigation-item">
-                  <a class="navigation-link" href="login.php">Login  </a>
+                  <a class="navigation-link" href="login.php">Login</a>
                 </li>
+              </br>
+              </br>
               </br>
                 <li class="navigation-item">
                   <a class="navigation-link" href="register.php">Register</a>
