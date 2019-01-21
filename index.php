@@ -27,7 +27,7 @@ session_start();
       <a class="navigation-title" href="index.php">
         <h1 class="title">WebApps</h1>
         </a>
-        <ul class="navigation-list float-right">
+        <ol class="navigation-list float-right">
           <div class="dropdown">
             <p class="navigation-item">Menu</p>
             <div class="dropdown-content">
@@ -43,9 +43,6 @@ session_start();
                 echo'<li class="navigation-item">
                   <a class="navigation-link" href="login.php">Login</a>
                 </li>
-              </br>
-              </br>
-              </br>
                 <li class="navigation-item">
                   <a class="navigation-link" href="register.php">Register</a>
                 </li>';
@@ -53,7 +50,7 @@ session_start();
           ?>
         </div>
         </div>
-        </ul>
+      </ol>
       </section>
     </nav>
     <header class="header">
