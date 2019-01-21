@@ -73,13 +73,6 @@ session_start();
     </div>
   </fieldset>
 </form>
-<form action="includes/logout.inc.php" method="post">
-<fieldset>
-<div class="float-center">
-<button class="button button-outline float-center" name="logoutButton" value="Logout" type="submit">Logout</button>
-</div>
-</fieldset>
-</form>
         </div>
       </div>
     </div>
