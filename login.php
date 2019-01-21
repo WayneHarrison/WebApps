@@ -46,6 +46,7 @@ session_start();
                   <a class="navigation-link" href="login.php">Login</a>
                 </li>
               </br>
+              </br>
                 <li class="navigation-item">
                   <a class="navigation-link" href="register.php">Register</a>
                 </li>';

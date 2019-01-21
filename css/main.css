@@ -427,3 +427,10 @@ color:#f4f5f6
 .signupsuccess {
   color:#0B6623;
 }
+
+.divcard {
+  border-radius: 25px;
+  color: #777;background-color:white;
+  text-align:center;
+  padding:50px 80px;
+}
