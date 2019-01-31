@@ -67,7 +67,6 @@ session_start();
         ?>
         <img class="profile" src="images/moostang.png">
         </br>
-          <a class="button button-outline" href="midpagetemplate.html" title="Reviews">Reviews</a>
       </div>
     </br>
   </br>
