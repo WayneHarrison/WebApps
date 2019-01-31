@@ -1,7 +1,10 @@
+<?php
+session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>JNReviews</title>
+  <title>Custom Imports</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" charset="UTF-8">
@@ -21,17 +24,33 @@
   <main class ="wrapper">
     <nav class="navigation">
       <section class="container">
-      <a class="navigation-title" href="index.html">
+      <a class="navigation-title" href="index.php">
         <h1 class="title">WebApps</h1>
         </a>
-        <ul class="navigation-list float-right">
+        <ol class="navigation-list float-right">
+          <div class="dropdown">
+            <p class="navigation-item">Menu</p>
+            <div class="dropdown-content">
           <li class="navigation-item">
-            <a class="navigation-link" href="midpagetemplate.html">Login</a>
+            <a class="navigation-link" href="products.php">Products</a>
           </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="downloads.html">Link 2</a>
-          </li>
-        </ul>
+          <?php
+            if(isset($_SESSION['usersID'])){
+              echo'<li class="navigation-item">
+                <a class="navigation-link" href="includes/logout.inc.php">Logout</a>
+              </li>'; }
+              else {
+                echo'<li class="navigation-item">
+                  <a class="navigation-link" href="login.php">Login</a>
+                </li>
+                <li class="navigation-item">
+                  <a class="navigation-link" href="register.php">Register</a>
+                </li>';
+              }
+          ?>
+        </div>
+        </div>
+      </ol>
       </section>
     </nav>
     <header class="header">
