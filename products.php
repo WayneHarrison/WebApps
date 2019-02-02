@@ -72,20 +72,7 @@ session_start();
                       while($product = mysqli_fetch_assoc($result)):
                         ?>
                       <div class="row">
-                      <div class="column column-50">
-                        <div class = "divcard">
-                          <form method="post" action="products.php?action=viewproduct<?php echo $product['carID']; ?>">
-                            <p class="description">
-                               <?php echo $product['carName']; ?>
-                            </p>
-                            <p class="description">
-                               <?php echo $product['carPrice']; ?>
-                            </p>
-                            <img src="<?php echo $product['carPicture']; ?>"/>
-                          </form>
-                        </div>
-                      </div>
-                      <div class="column column-50">
+                      <div class="column column-100">
                         <div class = "divcard">
                           <form method="post" action="products.php?action=viewproduct<?php echo $product['carID']; ?>">
                             <p class="description">
@@ -99,6 +86,9 @@ session_start();
                         </div>
                       </div>
                     </div>
+                  </br>
+                </br>
+              </br>
                     <?php
                   endwhile;
                 endif;
