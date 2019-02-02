@@ -67,9 +67,9 @@ session_start();
                   $query='SELECT * FROM car ORDER BY carID ASC';
 
                   $result = mysqli_query($conn, $query);
-                  if ($result):
-                    if(mysqli_num_rows($result)>0):
-                    while($product = mysqli_fetch_assoc($result)):
+                  if ($result){
+                    if(mysqli_num_rows($result)>0){
+                    while($product = mysqli_fetch_assoc($result)){
                       print_r($product);
                       ?>
                       <div class="row">
@@ -89,9 +89,9 @@ session_start();
                     </div>
                       </div>
                     <?php
-                  endwhile;
-                endif;
-              endif;
+                  endwhile}
+                endif}
+              endif}
               ?>
                   </br>
         <div class="row">
