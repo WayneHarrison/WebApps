@@ -61,7 +61,6 @@ session_start();
             <input type="text" name="search" placeholder="Search">
             <button class="button button-outline navigation-item" name="SearchButton" type="submit">Search</button>
           </form>
-          <div class="row">
             <?php
                   $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
                   mysqli_error($connection));
@@ -72,6 +71,7 @@ session_start();
                     if(mysqli_num_rows($result) > 0):
                       while($product = mysqli_fetch_assoc($result)):
                         ?>
+                      <div class="row">
                       <div class="column column-50">
                         <div class = "divcard">
                           <form method="post" action="products.php?action=viewproduct<?php echo $product['carID']; ?>">
@@ -79,49 +79,32 @@ session_start();
                                <?php echo $product['carName']; ?>
                             </p>
                             <p class="description">
-                               £<?php echo $product['carPrice']; ?>
+                               <?php echo $product['carPrice']; ?>
                             </p>
                             <img src"<?php echo $product['carPicture']; ?>"/>
                           </form>
                         </div>
                       </div>
+                      <div class="column column-50">
+                        <div class = "divcard">
+                          <form method="post" action="products.php?action=viewproduct<?php echo $product['carID']; ?>">
+                            <p class="description">
+                               <?php echo $product['carName']; ?>
+                            </p>
+                            <p class="description">
+                               <?php echo $product['carPrice']; ?>
+                            </p>
+                            <img src"<?php echo $product['carPicture']; ?>"/>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
                     <?php
                   endwhile;
                 endif;
               endif;
               ?>
-            </div>
                   </br>
-        <div class="row">
-        <div class="column column-50">
-        <div class = "divcard">
-          <p class="description">Car 3</p>
-          <img src="https://via.placeholder.com/150">
-        </div>
-      </div>
-      <div class="column column-50">
-      <div class = "divcard">
-        <p class="description">Car 4</p>
-        <img src="https://via.placeholder.com/150">
-      </div>
-    </div>
-      </div>
-    </br>
-      <div class="row">
-      <div class="column column-50">
-      <div class = "divcard">
-        <p class="description">Car 5</p>
-        <img src="https://via.placeholder.com/150">
-      </div>
-    </div>
-    <div class="column column-50">
-    <div class = "divcard">
-      <p class="description">Car 6</p>
-      <img src="https://via.placeholder.com/150">
-    </div>
-  </div>
-    </div>
-      </div>
     </br>
   </br>
 </br>
