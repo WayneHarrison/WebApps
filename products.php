@@ -72,8 +72,6 @@ session_start();
                       while($product = mysqli_fetch_assoc($result)){
                         print_r($product);
 
-            ?>
-            <?php
                       endwhile}
                    endif}
                 endif}
