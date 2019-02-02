@@ -61,18 +61,17 @@ session_start();
             <input type="text" name="search" placeholder="Search">
             <button class="button button-outline navigation-item" name="SearchButton" type="submit">Search</button>
           </form>
-
+          <div class="row">
             <?php
-                  require 'includes/dbh.inc.php';
-                  $query='SELECT * FROM car ORDER BY carID ASC';
-                  $result = mysqli_query($conn, $query);
+                  $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
+                  mysqli_error($connection));
+                  $query= 'SELECT * FROM car ORDER BY carID ASC';
+                  $result = mysqli_query($connection, $query);
 
                   if ($result):
-                    if(mysqli_num_rows($result)>0):
+                    if(mysqli_num_rows($result) > 0):
                       while($product = mysqli_fetch_assoc($result)):
-                        print_r($product);
                         ?>
-                      <div class="row">
                       <div class="column column-50">
                         <div class = "divcard">
                           <form method="post" action="products.php?action=viewproduct<?php echo $product['carID']; ?>">
@@ -86,18 +85,12 @@ session_start();
                           </form>
                         </div>
                       </div>
-                      <div class="column column-50">
-                      <div class = "divcard">
-                        <p class="description">Car 2</p>
-                        <img src="https://via.placeholder.com/150">
-                      </div>
-                    </div>
-                      </div>
                     <?php
                   endwhile;
                 endif;
               endif;
               ?>
+            </div>
                   </br>
         <div class="row">
         <div class="column column-50">
