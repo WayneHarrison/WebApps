@@ -75,11 +75,15 @@ session_start();
                       <div class="row">
                       <div class="column column-50">
                         <div class = "divcard">
-                          <form method="post" action="products.php?action=add&id=<?php echo $product['carID'];?>">
-                          <p class="description"><?php echo $product['carName'];?></p>
-                          <p class="description"><?php echo $product['carPrice']; ?></p>
-                          <img src="<?php echo $product['carPicture'];?>"/>
-                        </form>
+                          <form method="post" action="products.php?action=viewproduct<?php echo $product['carID']; ?>">
+                            <p class="description">
+                               <?php echo $product['carName']; ?>
+                            </p>
+                            <p class="description">
+                               £<?php echo $product['carPrice']; ?>
+                            </p>
+                            <img src"<?php echo $product['carPicture']; ?>"/>
+                          </form>
                         </div>
                       </div>
                       <div class="column column-50">
