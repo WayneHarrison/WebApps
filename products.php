@@ -65,20 +65,20 @@ session_start();
             <?php
                   require 'dbh.inc.php';
                   $query='SELECT * FROM car ORDER BY carID ASC';
-
                   $result = mysqli_query($conn, $query);
-                  if ($result){
-                    if(mysqli_num_rows($result)>0){
-                    while($product = mysqli_fetch_assoc($result)){
-                      print_r($product);
-                      ?>
+
+                  if ($result):
+                    if(mysqli_num_rows($result)>0):
+                      while($product = mysqli_fetch_assoc($result)):
+                        print_r($product);
+                        ?>
                       <div class="row">
                       <div class="column column-50">
                         <div class = "divcard">
                           <form method="post" action="products.php?action=add&id=<?php echo $product['carID'];?>">
-                          <p class="description"><?php echo $product ['carName'];?></p>
-                          <p class="description"><?php echo $product ['carPrice']; ?></p>
-                          <img src="<?php echo $product['carPicture'];?>">
+                          <p class="description"><?php echo $product['carName'];?></p>
+                          <p class="description"><?php echo $product['carPrice']; ?></p>
+                          <img src="<?php echo $product['carPicture'];?>"/>
                         </form>
                         </div>
                       </div>
@@ -90,9 +90,9 @@ session_start();
                     </div>
                       </div>
                     <?php
-                  endwhile}
-                endif}
-              endif}
+                  endwhile:
+                endif:
+              endif:
               ?>
                   </br>
         <div class="row">
