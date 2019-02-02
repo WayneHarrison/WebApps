@@ -81,7 +81,7 @@ session_start();
                             <p class="description">
                                <?php echo $product['carPrice']; ?>
                             </p>
-                            <img src"<?php echo $product['carPicture']; ?>"/>
+                            <img src="<?php echo $product['carPicture']; ?>"/>
                           </form>
                         </div>
                       </div>
@@ -94,7 +94,7 @@ session_start();
                             <p class="description">
                                <?php echo $product['carPrice']; ?>
                             </p>
-                            <img src"<?php echo $product['carPicture']; ?>"/>
+                            <img src="<?php echo $product['carPicture']; ?>"/>
                           </form>
                         </div>
                       </div>
