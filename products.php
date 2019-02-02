@@ -63,21 +63,41 @@ session_start();
           </form>
 
             <?php
-                  require 'dbh.inc.php';
+                  require 'includes/dbh.inc.php';
                   $query='SELECT * FROM car ORDER BY carID ASC';
                   $result = mysqli_query($conn, $query);
 
-                if ($result){
-                   if(mysqli_num_rows($result)>0){
+                  if ($result){
+                    if(mysqli_num_rows($result)>0){
                       while($product = mysqli_fetch_assoc($result)){
                         print_r($product);
-
-                      endwhile}
-                   endif}
+                        ?>
+                      <div class="row">
+                      <div class="column column-50">
+                        <div class = "divcard">
+                          <form method="post" action="products.php?action=viewproduct<?php echo $product['carID']; ?>">
+                            <p class="description">
+                               <?php echo $product['carName']; ?>
+                            </p>
+                            <p class="description">
+                               £<?php echo $product['carPrice']; ?>
+                            </p>
+                            <img src"<?php echo $product['carPicture']; ?>"/>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="column column-50">
+                      <div class = "divcard">
+                        <p class="description">Car 2</p>
+                        <img src="https://via.placeholder.com/150">
+                      </div>
+                    </div>
+                      </div>
+                    <?php
+                  endwhile}
                 endif}
-
-            ?>
-
+              endif}
+              ?>
                   </br>
         <div class="row">
         <div class="column column-50">
