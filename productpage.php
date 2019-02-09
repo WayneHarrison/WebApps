@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <title>JNReviews</title>
+  <title>Custom Imports</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui" charset="UTF-8">
@@ -23,26 +23,42 @@
   <main class ="wrapper">
     <nav class="navigation">
       <section class="container">
-      <a class="navigation-title" href="index.html">
-        <h1 class="title">JNReviews</h1>
+      <a class="navigation-title" href="index.php">
+        <h1 class="title">WebApps</h1>
         </a>
-        <ul class="navigation-list float-right">
+        <ol class="navigation-list float-right">
+          <div class="dropdown">
+            <p class="navigation-item">Menu</p>
+            <div class="dropdown-content">
           <li class="navigation-item">
-            <a class="navigation-link" href="index.html">Home</a>
+            <a class="navigation-link" href="products.php">Products</a>
           </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="downloads.html">Downloads</a>
-          </li>
-        </ul>
+          <?php
+            if(isset($_SESSION['usersID'])){
+              echo'<li class="navigation-item">
+                <a class="navigation-link" href="includes/logout.inc.php">Logout</a>
+              </li>'; }
+              else {
+                echo'<li class="navigation-item">
+                  <a class="navigation-link" href="login.php">Login</a>
+                </li>
+                <li class="navigation-item">
+                  <a class="navigation-link" href="register.php">Register</a>
+                </li>';
+              }
+          ?>
+        </div>
+        </div>
+      </ol>
       </section>
     </nav>
     <header class="header" name="top">
       <section class="container">
       <div class="MyJumbo">
           <h1 class="title">Product Name</h1>
-          <p class="description">By Wayne Harrison</p>
+          <p class="description">Price</p>
           <img src="http://via.placeholder.com/1400x1000">
-          <p>Wrong review? Go <a class="link" href="midpagetemplate.html">back.</a></p>
+          <p>Wrong review? Go <a class="link" href="products.php">back.</a></p>
       </div>
     </section>
     </header>
@@ -84,9 +100,6 @@
         </ul>
         </p>
       </div>
-      <div align="center">
-      <button onclick="topFunction()" class="button button-outline">Back To Top</button>
-    </div>
     </section>
   </main>
 </body>
