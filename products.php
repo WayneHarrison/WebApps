@@ -14,7 +14,7 @@ if(filter_input(INPUT_POST, 'viewProduct')){
             'carName' => filter_input(INPUT_POST, 'carName'),
             'carPrice' => filter_input(INPUT_POST, 'carPrice'),
             'carPicture' => filter_input(INPUT_POST, 'carPicture'),
-        )
+        );
       }
 }
 print_r($_SESSION)
