@@ -11,6 +11,10 @@ if (isset($_GET['ID'])) {
     $sql = "SELECT * FROM car WHERE carID='$ID'";
     $result= mysqli_query($connection, $sql) or die("Bad Query: $sql");
     $row= mysqli_fetch_array($result);
+  }
+  else {
+    header("Location: ../index.php");
+  }
 ?>
 <!DOCTYPE HTML>
 <html>
