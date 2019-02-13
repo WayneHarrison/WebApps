@@ -58,59 +58,60 @@ $id == $_GET['ID']
       </ol>
       </section>
     </nav>
-
+    <header class="header" name="top">
       <?php
         if($id == $product['carID']){
-          echo'<header class="header" name="top"><section class="container">
-          <div class="MyJumbo">
-              <h1 class="title"><?php echo $product['carName']; ?></h1>
-              <p class="description"><?php echo $product['carPrice']; ?></p>
-              <img src="<?php echo $product['carPicture']; ?>">
-              <p>Go <a class="link" href="products.php">back.</a></p>
-          </div>
-        </section>
-        </header>
-        <section class="container">
-          <div class="myJumbo">
-            <h3 class="title">Introduction</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
-              Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
-            </p>
-            <h3 class="title">The Good</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
-              Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
-            </p>
-            <h3 class="title">The Bad</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
-              Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
-            </p>
-            <h3 class="title">Conclusion</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
-              Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
-            <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            </ul>
-            </p>
-          </div>
-        </section>';
+          'SELECT * FROM car WHERE carID == $id';
         }
       ?>
+      <section class="container">
+      <div class="MyJumbo">
+          <h1 class="title"><?php echo $product['carName']; ?></h1>
+          <p class="description"><?php echo $product['carPrice']; ?></p>
+          <img src="http://via.placeholder.com/1400x1000">
+          <p>Go <a class="link" href="products.php">back.</a></p>
+      </div>
+    </section>
+    </header>
+    <section class="container">
+      <div class="myJumbo">
+        <h3 class="title">Introduction</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
+          Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
+        </p>
+        <h3 class="title">The Good</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
+          Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        </ul>
+        </p>
+        <h3 class="title">The Bad</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
+          Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        </ul>
+        </p>
+        <h3 class="title">Conclusion</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
+          Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        </ul>
+        </p>
+      </div>
+    </section>
 
   </main>
 </body>
