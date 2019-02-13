@@ -2,7 +2,6 @@
 $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
 mysqli_error($connection));
 session_start();
-$id == $_GET['ID']
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -58,13 +57,12 @@ $id == $_GET['ID']
       </ol>
       </section>
     </nav>
+    <?php
+        if(isset($_GET['ID'])){
+          'SELECT * FROM car'
+        }
+    ?>
     <header class="header" name="top">
-      <?php
-        $product= 'SELECT * FROM car ORDER BY carID ASC';
-        if ($product):
-          if(mysqli_num_rows($product) > 0):
-            while($product = mysqli_fetch_assoc($product)):
-      ?>
       <section class="container">
       <div class="MyJumbo">
           <h1 class="title"><?php echo $product['carName']; ?></h1>
@@ -113,11 +111,6 @@ $id == $_GET['ID']
         </p>
       </div>
     </section>
-    <?php
-  endwhile;
-endif;
-endif;
-?>
   </main>
 </body>
 </html>
