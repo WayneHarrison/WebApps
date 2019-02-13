@@ -71,7 +71,7 @@ if (isset($_GET['ID'])) {
       <div class="MyJumbo">
           <h1 class="title"><?php echo $result['carName'];?></h1>
           <p class="description"><?php echo $result['carPrice'];?></p>
-          <img src="<?php echo $result['carPicture']?>">
+          <img src="<?php echo $result['carPicture'];?>">
           <p>Go <a class="link" href="products.php">back.</a></p>
       </div>
     </section>
