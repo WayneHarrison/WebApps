@@ -1,6 +1,5 @@
 <?php
 session_start();
-require 'dbh.inc.php';
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -56,11 +55,6 @@ require 'dbh.inc.php';
       </ol>
       </section>
     </nav>
-    <?php
-      if(ISSET($_GET['carID'])){
-        echo $product['carPicture'];
-      }
-    ?>
     <header class="header" name="top">
       <section class="container">
       <div class="MyJumbo">

@@ -74,7 +74,7 @@ session_start();
                       <div class="row">
                       <div class="column column-100">
                         <div class = "divcard">
-                          <form method="post" action="productpage.php?carID=<?php echo $product['carID']; ?>">
+                          <form method="post" action="productpage.php?ID=<?php echo $product['carID']; ?>">
                             <p class="description">
                                <?php echo $product['carName']; ?>
                             </p>
