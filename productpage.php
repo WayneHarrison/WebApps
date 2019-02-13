@@ -59,7 +59,7 @@ session_start();
     </nav>
     <?php
         if(isset($_GET['ID'])){
-          'SELECT * FROM car'
+          'SELECT * FROM car';
         }
     ?>
     <header class="header" name="top">
