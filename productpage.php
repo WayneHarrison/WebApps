@@ -108,7 +108,7 @@ $id == $_GET['ID']
             </ul>
             </p>
           </div>
-        </section>'
+        </section>';
         }
       ?>
 
