@@ -2,40 +2,15 @@
 session_start();
 ?>
 <?php
-if (isset($_GET['id'])) {
+if (isset($_GET['ID'])) {
 	// Connect to the MySQL database
     $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
     mysqli_error($connection));
-	$id = preg_replace('#[^0-9]#i', '', $_GET['ID']);
-	// Use this var to check to see if this ID exists, if yes then get the product
-	// details, if no then exit this script and give message why
-	$sql = mysql_query("SELECT * FROM car WHERE carID='$id' LIMIT 1");
-	$productCount = mysql_num_rows($sql); // count the output amount
-    if ($productCount > 0) {
-		// get all the product details
-		while($row = mysql_fetch_array($sql)){
-			 $car_name = $row["carName"];
-			 $price = $row["carPrice"];
-			 $description = $row["carDescription"];
-       $doors = $row["carDoors"];
-       $color = $row["carColor"];
-       $engine = $row["carEngine"];
-       $gearbox = $row["carGearbox"];
-       $fuel = $row["carFuel"];
-       $picture = $row["carPicture"];
-			 ));
-         }
+	  $ID = mysqli_real_escape_string($connection, $_GET['ID']);
 
-	} else {
-		echo "That item does not exist.";
-	    exit();
-	}
-
-} else {
-	echo "Data to render this page is missing.";
-	exit();
-}
-mysql_close();
+    $sql = "SELECT * FROM car WHERE carID='$ID'";
+    $result= mysqli_query($connection, $sql) or die("Bad Query: $sql");
+    $row= mysqli_fetch_array($result);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -94,9 +69,9 @@ mysql_close();
     <header class="header" name="top">
       <section class="container">
       <div class="MyJumbo">
-          <h1 class="title"><?php echo $car_name;?></h1>
-          <p class="description"><?php echo $price;?></p>
-          <img src="<?php echo $picture?>">
+          <h1 class="title"><?php echo $result['carName'];?></h1>
+          <p class="description"><?php echo $result['carPrice'];?></p>
+          <img src="<?php echo $result['carPicture']?>">
           <p>Go <a class="link" href="products.php">back.</a></p>
       </div>
     </section>
