@@ -61,7 +61,7 @@ $id == $_GET['ID']
     <header class="header" name="top">
       <?php
         if($id == $product['carID']){
-          'SELECT * FROM car WHERE carID == $id';
+          'SELECT * FROM car';
         }
       ?>
       <section class="container">
