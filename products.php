@@ -1,23 +1,5 @@
 <?php
 session_start();
-$product_ids = array();
-
-// check if the view product button has been clicked
-if(filter_input(INPUT_POST, 'viewProduct')){
-      if(isset($_SESSION['viewCar'])){
-
-      }
-      else {
-
-        $_SESSION['viewCar'][0] = array(
-            'carID' => filter_input(INPUT_GET, 'carID'),
-            'carName' => filter_input(INPUT_POST, 'carName'),
-            'carPrice' => filter_input(INPUT_POST, 'carPrice'),
-            'carPicture' => filter_input(INPUT_POST, 'carPicture'),
-        );
-      }
-}
-print_r($_SESSION)
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -92,7 +74,7 @@ print_r($_SESSION)
                       <div class="row">
                       <div class="column column-100">
                         <div class = "divcard">
-                          <form method="post" action="products.php?action=viewproduct<?php echo $product['carID']; ?>">
+                          <form method="post" action="productpage.php?action=viewproduct<?php echo $product['carID']; ?>">
                             <p class="description">
                                <?php echo $product['carName']; ?>
                             </p>
