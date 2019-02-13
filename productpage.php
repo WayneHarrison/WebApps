@@ -62,8 +62,8 @@ $id == $_GET['ID']
       <?php
         $product= 'SELECT * FROM car ORDER BY carID ASC';
         if ($product):
-          if(mysqli_num_rows($result) > 0):
-            while($product = mysqli_fetch_assoc($result)):
+          if(mysqli_num_rows($product) > 0):
+            while($product = mysqli_fetch_assoc($product)):
       ?>
       <section class="container">
       <div class="MyJumbo">
