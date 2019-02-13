@@ -58,13 +58,13 @@ $id == $_GET['ID']
       </ol>
       </section>
     </nav>
-    <?php
-      if($id == $product['carID']){
-        echo $product['carName'];
-        echo $product['carPrice'];
-      }
-    ?>
     <header class="header" name="top">
+      <?php
+        if($id == $product['carID']){
+          echo $product['carName'];
+          echo $product['carPrice'];
+        }
+      ?>
       <section class="container">
       <div class="MyJumbo">
           <h1 class="title">Product Name</h1>
