@@ -63,9 +63,9 @@ $id == $_GET['ID']
         if($id == $product['carID']){
           echo'<header class="header" name="top"><section class="container">
           <div class="MyJumbo">
-              <h1 class="title">Product Name</h1>
-              <p class="description">Price</p>
-              <img src="http://via.placeholder.com/1400x1000">
+              <h1 class="title"><?php echo $product['carName']; ?></h1>
+              <p class="description"><?php echo $product['carPrice']; ?></p>
+              <img src="<?php echo $product['carPicture']; ?>">
               <p>Go <a class="link" href="products.php">back.</a></p>
           </div>
         </section>
