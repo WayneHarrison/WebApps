@@ -77,7 +77,7 @@ session_start();
           <h1 class="title">
             <?php echo $product['carName']; ?>
           </h1>
-          <p class="description"><?php echo $product['carPrice'];?></p>
+          <h2><?php echo $product['carPrice'];?></h2>
           <img src="<?php echo $product['carPicture'];?>">
           <p>Go <a class="link" href="products.php">back.</a></p>
       </div>
@@ -85,39 +85,18 @@ session_start();
     </header>
     <section class="container">
       <div class="myJumbo">
-        <h3 class="title">Introduction</h3>
+        <h3 class="title">Description</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
-          Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
+          <?php echo $product['carDescription']; ?>
         </p>
-        <h3 class="title">The Good</h3>
+        <h3 class="title">Technical Specs</h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
-          Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
         <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        </ul>
-        </p>
-        <h3 class="title">The Bad</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
-          Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        </ul>
-        </p>
-        <h3 class="title">Conclusion</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id lacus elit.
-          Curabitur feugiat quam ac iaculis pretium. Morbi congue velit est, vitae interdum lorem sodales sed. Nulla in mauris quam.
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Colour: <?php echo $product['carColor']; ?></li>
+          <li>Doors: <?php echo $product['carDoors']; ?></li>
+          <li>Engine Size: <?php echo $product['carEngine']; ?></li>
+          <li>Gearbox: <?php echo $product['carGearbox']; ?></li>
+          <li>Fuel: <?php echo $product['carFuel']; ?></li>
         </ul>
         </p>
       </div>
