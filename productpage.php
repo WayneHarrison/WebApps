@@ -60,9 +60,10 @@ $id == $_GET['ID']
     </nav>
     <header class="header" name="top">
       <?php
-        if($id == $product['carID']){
-          'SELECT * FROM car';
-        }
+        $product= 'SELECT * FROM car ORDER BY carID ASC';
+        if ($product['carID'] == $id):
+          if(mysqli_num_rows($result) > 0):
+            while($product = mysqli_fetch_assoc($result)):
       ?>
       <section class="container">
       <div class="MyJumbo">
@@ -112,7 +113,11 @@ $id == $_GET['ID']
         </p>
       </div>
     </section>
-
+    <?php
+  endwhile;
+endif;
+endif;
+?>
   </main>
 </body>
 </html>
