@@ -1,3 +1,7 @@
+<?php
+session_start();
+require 'dbh.inc.php';
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -52,6 +56,9 @@
       </ol>
       </section>
     </nav>
+    <?php
+      
+    ?>
     <header class="header" name="top">
       <section class="container">
       <div class="MyJumbo">
@@ -101,6 +108,7 @@
         </p>
       </div>
     </section>
+
   </main>
 </body>
 </html>
