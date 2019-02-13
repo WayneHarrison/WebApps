@@ -57,7 +57,9 @@ require 'dbh.inc.php';
       </section>
     </nav>
     <?php
-      
+      if(ISSET($_GET['carID'])){
+        echo $product['carPicture'];
+      }
     ?>
     <header class="header" name="top">
       <section class="container">
@@ -65,7 +67,7 @@ require 'dbh.inc.php';
           <h1 class="title">Product Name</h1>
           <p class="description">Price</p>
           <img src="http://via.placeholder.com/1400x1000">
-          <p>Wrong review? Go <a class="link" href="products.php">back.</a></p>
+          <p>Go <a class="link" href="products.php">back.</a></p>
       </div>
     </section>
     </header>
