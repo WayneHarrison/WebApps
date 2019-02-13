@@ -2,19 +2,20 @@
 session_start();
 ?>
 <?php
-if (isset($_GET['ID'])) {
+
 	// Connect to the MySQL database
     $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
     mysqli_error($connection));
-	  $ID = mysqli_real_escape_string($connection, $_GET['ID']);
+    //Set ID
+	  $ID = intval($_GET['ID']);
 
     $sql = "SELECT * FROM car WHERE carID='$ID'";
-    $result= mysqli_query($connection, $sql) or die("Bad Query: $sql");
-    $row= mysqli_fetch_array($result);
-  }
-  else {
-    header("Location: ../index.php");
-  }
+    $result= mysqli_query($connection, "SELECT * FROM car WHERE carID= ".$ID );
+    if(mysqli_num_rows($result)) {
+      $product = mysqli_fetch_array($result);
+    }
+
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -73,9 +74,11 @@ if (isset($_GET['ID'])) {
     <header class="header" name="top">
       <section class="container">
       <div class="MyJumbo">
-          <h1 class="title"><?php echo $result['carName'];?></h1>
-          <p class="description"><?php echo $result['carPrice'];?></p>
-          <img src="<?php echo $result['carPicture'];?>">
+          <h1 class="title">
+            <?php echo $product['carName']; ?>
+          </h1>
+          <p class="description"><?php echo $product['carPrice'];?></p>
+          <img src="<?php echo $product['carPicture'];?>">
           <p>Go <a class="link" href="products.php">back.</a></p>
       </div>
     </section>
