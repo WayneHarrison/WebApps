@@ -56,32 +56,34 @@ session_start();
     <header class="header">
       <section class="container">
       <div class="MyJumbo">
-          <h1 class="title">Current Stock</h1>
-          <form action="search.php" method="POST">
-            <input type="text" name="search" placeholder="Search">
-            <button class="button button-outline navigation-item" name="submit-search" type="submit">Search</button>
-          </form>
+          <h1 class="title">Search Results</h1>
+          <h2>Go <a class="link" href="products.php">back.</a></h2>
             <?php
                   $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
                   mysqli_error($connection));
-                  $query= 'SELECT * FROM car ORDER BY carID ASC';
-                  $result = mysqli_query($connection, $query);
+                    if (isset($_POST['submit-search'])):
+                      $search = mysqli_real_escape_string($connection, $_POST['search']);
+                      $sql = "SELECT * FROM car WHERE carName LIKE '%$search%' OR carColor LIKE '%$search%' OR carEngine LIKE '%$search%'
+                       OR carFuel LIKE '%$search%' OR carGearbox LIKE '%$search%'";
+                      $result = mysqli_query($connection, $sql);
+                      $queryResult = mysqli_num_rows($result);
 
-                  if ($result):
-                    if(mysqli_num_rows($result) > 0):
-                      while($product = mysqli_fetch_assoc($result)):
-                        ?>
+                      if ($queryResult > 0):
+                        while ($row = mysqli_fetch_assoc($result)):
+
+
+                  ?>
                       <div class="row">
                       <div class="column column-100">
                         <div class = "divcard">
-                          <form method="post" action="productpage.php?ID=<?php echo $product['carID']; ?>">
+                          <form method="post" action="productpage.php?ID=<?php echo $row['carID']; ?>">
                             <p class="description">
-                               <?php echo $product['carName']; ?>
+                               <?php echo $row['carName']; ?>
                             </p>
                             <p class="description">
-                               <?php echo $product['carPrice']; ?>
+                               <?php echo $row['carPrice']; ?>
                             </p>
-                            <img src="<?php echo $product['carPicture']; ?>"/>
+                            <img src="<?php echo $row['carPicture']; ?>"/>
                             <button class="button button-outline float-center" name="viewProduct" type="submit">View Product</button>
                           </form>
                         </div>
@@ -89,11 +91,16 @@ session_start();
                     </div>
                   </br>
                 </br>
-                    <?php
-                  endwhile;
+                <?php
+                endwhile;
                 endif;
-              endif;
-              ?>
+                endif;
+
+
+                else{
+                  echo "<h2>No results matching your search!</h2>"
+                }
+                ?>
                   </br>
     </br>
   </br>
