@@ -94,12 +94,10 @@ session_start();
                 <?php
                 endwhile;
                 endif;
+                else:
+                  echo "<h2>No results matching your search!</h2>";
+
                 endif;
-
-
-                else{
-                  echo "<h2>No results matching your search!</h2>"
-                }
                 ?>
                   </br>
     </br>
