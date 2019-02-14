@@ -97,7 +97,7 @@ session_start();
                 endwhile;
                 endif;
                 else:
-                  echo "<h2>No results matching your search!</h2>";
+                  echo'<h2>No results matching your search!</h2>';
 
                 endif;
                 ?>
