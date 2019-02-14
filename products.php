@@ -82,7 +82,9 @@ session_start();
                                <?php echo $product['carPrice']; ?>
                             </p>
                             <img src="<?php echo $product['carPicture']; ?>"/>
+                            <div>
                             <button class="button button-outline float-center" name="viewProduct" type="submit">View Product</button>
+                          </div>
                           </form>
                         </div>
                       </div>
