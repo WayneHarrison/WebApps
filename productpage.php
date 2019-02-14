@@ -44,61 +44,67 @@ session_start();
       <section class="container">
       <a class="navigation-title" href="index.php">
         <h1 class="title">WebApps</h1>
-        </a>
-        <ol class="navigation-list float-right">
-          <div class="dropdown">
-            <p class="navigation-item">Menu</p>
-            <div class="dropdown-content">
-          <li class="navigation-item">
-            <a class="navigation-link" href="products.php">Products</a>
-          </li>
-          <?php
-            if(isset($_SESSION['usersID'])){
-              echo'<li class="navigation-item">
-                <a class="navigation-link" href="includes/logout.inc.php">Logout</a>
-              </li>'; }
-              else {
-                echo'<li class="navigation-item">
+      </a>
+      <ol class="navigation-list float-right">
+        <div class="dropdown">
+          <p class="navigation-item">Menu</p>
+          <div class="dropdown-content">
+            <li class="navigation-item">
+              <a class="navigation-link" href="products.php">Products</a>
+            </li>
+            <?php
+                if(isset($_SESSION['usersID'])){
+                  echo'<li class="navigation-item">
+                  <a class="navigation-link" href="includes/logout.inc.php">Logout</a>
+                  </li>'; }
+                else {
+                  echo'<li class="navigation-item">
                   <a class="navigation-link" href="login.php">Login</a>
-                </li>
-                <li class="navigation-item">
+                  </li>
+                  <li class="navigation-item">
                   <a class="navigation-link" href="register.php">Register</a>
-                </li>';
+                  </li>';
               }
           ?>
-        </div>
+          </div>
         </div>
       </ol>
       </section>
     </nav>
     <header class="header" name="top">
       <section class="container">
-      <div class="MyJumbo">
-          <h1 class="title">
-            <?php echo $product['carName']; ?>
-          </h1>
-          <h2><?php echo $product['carPrice'];?></h2>
-          <img src="<?php echo $product['carPicture'];?>">
-          <p>Go <a class="link" href="products.php">back.</a></p>
-      </div>
-    </section>
+        <div class="MyJumbo">
+            <h1 class="title">
+              <?php echo $product['carName']; ?>
+            </h1>
+            <h2><?php echo $product['carPrice'];?></h2>
+            <img src="<?php echo $product['carPicture'];?>">
+            <p>Go <a class="link" href="products.php">back.</a></p>
+        </div>
+      </section>
     </header>
     <section class="container">
       <div class="myJumbo">
-        <h3 class="title">Description</h3>
-        <p>
-          <?php echo $product['carDescription']; ?>
-        </p>
-        <h3 class="title">Technical Specs</h3>
-        <p>
-        <ul>
-          <li>Colour: <?php echo $product['carColor']; ?></li>
-          <li>Doors: <?php echo $product['carDoors']; ?></li>
-          <li>Engine Size: <?php echo $product['carEngine']; ?></li>
-          <li>Gearbox: <?php echo $product['carGearbox']; ?></li>
-          <li>Fuel: <?php echo $product['carFuel']; ?></li>
-        </ul>
-        </p>
+        <div class ="row">
+          <div class="column column-50">
+              <h3 class="title">Description</h3>
+                <p>
+                  <?php echo $product['carDescription']; ?>
+                </p>
+          </div>
+          <div class="column column-50">
+              <h3 class="title">Technical Specs</h3>
+                <p>
+                  <ul>
+                    <li>Colour: <?php echo $product['carColor']; ?></li>
+                    <li>Doors: <?php echo $product['carDoors']; ?></li>
+                    <li>Engine Size: <?php echo $product['carEngine']; ?></li>
+                    <li>Gearbox: <?php echo $product['carGearbox']; ?></li>
+                    <li>Fuel: <?php echo $product['carFuel']; ?></li>
+                  </ul>
+                </p>
+          </div>
+        </div>
       </div>
     </section>
   </main>

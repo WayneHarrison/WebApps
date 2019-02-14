@@ -89,7 +89,6 @@ session_start();
                     </div>
                   </br>
                 </br>
-              </br>
                     <?php
                   endwhile;
                 endif;
