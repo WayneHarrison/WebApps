@@ -91,6 +91,10 @@ session_start();
     <input placeholder="1 Fakestreet" id="addressField" type="text" name="address">
     <label for="pcField">Postcode</label>
     <input id="pcField" type="text" name="postcode">
+    <label for="dobField">Date of Birth</label>
+    <input id="dobField" type="text" name="dob">
+    <label for="phoneField">Phone Number</label>
+    <input id="phoneField" type="text" name="phone">
     <label for="emailField">Email</label>
     <input placeholder="example@gmail.com" id="emailField" type="text" name="email">
     <label for="passwordField">Password</label>
