@@ -49,14 +49,15 @@ session_start();
         <div class="dropdown">
           <p class="navigation-item">Menu</p>
           <div class="dropdown-content">
-            <li class="navigation-item">
-              <a class="navigation-link" href="products.php">Products</a>
-            </li>
             <?php
-                if(isset($_SESSION['usersID'])){
-                  echo'<li class="navigation-item">
-                  <a class="navigation-link" href="includes/logout.inc.php">Logout</a>
-                  </li>'; }
+            if(isset($_SESSION['usersID'])){
+              echo' <li class="navigation-item">
+                      <a class="navigation-link" href="includes/logout.inc.php">Logout</a>
+                    </li>
+                    <li class="navigation-item">
+                      <a class="navigation-link" href="products.php">Products</a>
+                    </li>';
+                  }
                 else {
                   echo'<li class="navigation-item">
                   <a class="navigation-link" href="login.php">Login</a>
