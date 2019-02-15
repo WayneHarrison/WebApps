@@ -75,6 +75,12 @@ session_start();
             else if($_GET['error'] == "passwordcheck") {
               echo '<p class="signuperror">Password do not match!</p>';
             }
+            else if($_GET['error'] == "incorrectdob") {
+              echo '<p class="signuperror">Numbers only in DOB field!</p>';
+            }
+            else if($_GET['error'] == "incorrectphone") {
+              echo '<p class="signuperror">Numbers only in phone number field!</p>';
+            }
             else if($_GET['error'] == "EmailTaken") {
               echo '<p class="signuperror">User already registered!</p>';
             }
@@ -92,7 +98,7 @@ session_start();
     <label for="pcField">Postcode</label>
     <input id="pcField" type="text" name="postcode">
     <label for="dobField">Date of Birth</label>
-    <input id="dobField" type="text" name="dob">
+    <input placeholder="DDMMYY" id="dobField" type="text" name="dob">
     <label for="phoneField">Phone Number</label>
     <input id="phoneField" type="text" name="phone">
     <label for="emailField">Email</label>
