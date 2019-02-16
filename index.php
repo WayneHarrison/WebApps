@@ -1,5 +1,16 @@
 <?php
 session_start();
+// Connect to the MySQL database
+  $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
+  mysqli_error($connection));
+  //Set ID
+  $ID = intval($_GET['usersID']);
+
+  $sql = "SELECT * FROM user WHERE userID='$ID'";
+  $result= mysqli_query($connection, "SELECT * FROM user WHERE userID= ".$ID );
+  if(mysqli_num_rows($result)) {
+    $user = mysqli_fetch_array($result);
+  }
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -58,13 +69,12 @@ session_start();
       <div class="MyJumbo">
         <h1 class="title">Custom Imports</h1>
         <?php
-        if (isset($_SESSION['usersID'])){
-          echo '<p class="description">You are logged in.</p>';
-        } else {
-          echo '<p class="description">You are logged out.</p>';
-        }
+        if (isset($_SESSION['usersID'])): ?>
+          <p class='description'>Welcome <?php echo $user['userName']; ?></p>
 
-        ?>
+          <?php
+         else: echo "<p class="description">You are logged out.</p>";
+          ?>
         <img class="profile" src="images/moostang.png">
         </br>
       </div>
