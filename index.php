@@ -59,7 +59,7 @@ session_start();
         <h1 class="title">Custom Imports</h1>
         <?php
         if (isset($_SESSION['usersID'])){
-          echo '<p class="description">Welcome <?php echo "($_SESSION["usersName"])" ?>.</p>';
+          echo '<p class="description">Welcome'({$_SESSION['usersName']});'.</p>'  ;
         } else {
           echo '<p class="description">You are logged out.</p>';
         }
