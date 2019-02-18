@@ -430,8 +430,19 @@ color:#f4f5f6
 }
 
 .divcard {
+  border-right:.2rem solid #000;
+  border-bottom:.2rem solid #000;
   border-radius: 25px;
   color: #777;background-color:white;
+  text-align:center;
+  padding:50px 80px;
+}
+.divcardprofile {
+  border-right:.2rem solid #000;
+  border-bottom:.2rem solid #000;
+  border-radius: 25px;
+  color: #777;
+  background-color:white;
   text-align:center;
   padding:50px 80px;
 }
