@@ -3,7 +3,8 @@ $uID = $_SESSION['usersID'];
 
 if (isset($_POST['editButton'])){
 
-  require 'dbh.inc.php';
+  $conn = mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
+  mysqli_error($conn));
 
   $address = $_POST['editAddress'];
   $postcode = $_POST['editPostcode'];
@@ -11,11 +12,11 @@ if (isset($_POST['editButton'])){
   $dob = $_POST['editDob'];
 
   if (!preg_match("/^[0-9]*$/", $dob)){
-    header("Location: ../profileedit.php?error=incorrectdob&address".$address."&postcode".$postcode."&phone".$phone);
+    header("Location: ../profileedit.php?error=incorrectdob");
     exit();
   }
     else if (!preg_match("/^[0-9]*$/", $phone)){
-      header("Location: ../profileedit.php?error=incorrectphone&address".$address."&postcode".$postcode);
+      header("Location: ../profileedit.php?error=incorrectphone");
       exit();
     }
     else {
