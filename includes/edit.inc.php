@@ -1,4 +1,5 @@
 <?php
+session_start();
 $uID = $_SESSION['usersID'];
 
 if (isset($_POST['editButton'])){
