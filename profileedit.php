@@ -77,7 +77,7 @@ session_start();
             echo '<p class="signupsuccess">Edit successful!</p>';
           }
           ?>
-        <form>
+        <form action="includes/edit.inc.php" method="post">
           <fieldset>
             <label for="addressField">Address</label>
             <input placeholder="1 Fakestreet" id="addressField" type="text" name="editAddress">
