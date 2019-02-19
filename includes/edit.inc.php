@@ -10,7 +10,11 @@ if (isset($_POST['editButton'])){
   $phone = $_POST['editPhone'];
   $dob = $_POST['editDob'];
 
-  if (!preg_match("/^[0-9]*$/", $dob)){
+  if (empty($address) || empty($postcode) || empty($dob) || empty($phone)){
+      header("Location: ../profileedit.php?error=emptyfields&name=".$name."&address".$address."&postcode".$postcode."&email".$email);
+      exit();
+    }
+  else if (!preg_match("/^[0-9]*$/", $dob)){
     header("Location: ../profileedit.php?error=incorrectdob");
     exit();
   }

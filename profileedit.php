@@ -66,7 +66,10 @@ session_start();
           <h3 class="title">Change desired details below and press submit.</h3>
           <?php
           if(isset($_GET['error'])){
-            if($_GET['error'] == "incorrectdob") {
+            if($_GET['error'] == "emptyfields") {
+              echo '<p class="signuperror">Missing Fields!</p>';
+            }
+            else if($_GET['error'] == "incorrectdob") {
               echo '<p class="signuperror">Numbers only in DOB field!</p>';
             }
             else if($_GET['error'] == "incorrectphone") {
