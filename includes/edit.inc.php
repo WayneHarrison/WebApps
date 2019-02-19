@@ -1,5 +1,4 @@
 <?php
-session_start();
 $uID = $_SESSION['usersID'];
 
 if (isset($_POST['editButton'])){
@@ -23,7 +22,7 @@ if (isset($_POST['editButton'])){
     else {
       $sql = "UPDATE user SET (userAddress, userPostCode, userDOB, userPhone) VALUES (?, ?, ?, ?) WHERE userID =".$uID;
       $stmt = mysqli_stmt_init($conn);
-      if (!mysqli_stmt_prepare($stmt, $sql)) {
+      if (!mysqli_stmt_prepare($stmt, "UPDATE user SET (userAddress, userPostCode, userDOB, userPhone) VALUES (?, ?, ?, ?) WHERE userID =".$uID;)) {
         header("Location: ../profileedit.php?error=SQLError");
         exit();
       }
