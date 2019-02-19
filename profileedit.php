@@ -64,17 +64,30 @@ session_start();
       <div class="divcard">
           <h2 class="title">Edit your details</h2>
           <h3 class="title">Change desired details below and press submit.</h3>
+          <?php
+          if(isset($_GET['error'])){
+            if($_GET['error'] == "incorrectdob") {
+              echo '<p class="signuperror">Numbers only in DOB field!</p>';
+            }
+            else if($_GET['error'] == "incorrectphone") {
+              echo '<p class="signuperror">Numbers only in phone number field!</p>';
+            }
+          }
+          else if ($_GET["edit"] == "success") {
+            echo '<p class="signupsuccess">Edit successful!</p>';
+          }
+          ?>
         <form>
           <fieldset>
             <label for="addressField">Address</label>
-            <input placeholder="1 Fakestreet" id="addressField" type="text" name="address">
+            <input placeholder="1 Fakestreet" id="addressField" type="text" name="editAddress">
             <label for="pcField">Postcode</label>
-            <input id="pcField" type="text" name="postcode">
+            <input id="pcField" type="text" name="editPostcode">
             <label for="phoneField">Phone Number</label>
-            <input id="phoneField" type="text" name="phone">
+            <input id="phoneField" type="text" name="editPhone">
             <label for="dobField">Date of Birth</label>
-            <input placeholder="DDMMYY" id="dobField" type="text" name="dob">
-            <button class="button button-outline">Submit</button>
+            <input placeholder="DDMMYY" id="dobField" type="text" name="editDob">
+            <button class="button button-outline" name="editButton">Submit</button>
           </fieldset>
         </form>
       </div>

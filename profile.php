@@ -86,7 +86,7 @@ if(mysqli_num_rows($result)) {
             <li>Phone: <?php echo $userResult['userPhone']; ?></li>
             <li>Date of Birth: <?php echo $userResult['userDOB'];?></li>
           </ul>
-        <a href="profileedit.php">  <button class="button button-outline" type="submit" name="editDetails">Edit Details</button></a>
+        <a href="profileedit.php">  <button class="button button-outline">Edit Details</button></a>
       </div>
     </section>
     </header>
