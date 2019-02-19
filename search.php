@@ -34,6 +34,9 @@ session_start();
           <?php
           if(isset($_SESSION['usersID'])){
             echo' <li class="navigation-item">
+                    <a class="navigation-link" href="profile.php">Profile</a>
+                  </li>
+                  <li class="navigation-item">
                     <a class="navigation-link" href="products.php">Products</a>
                   </li>
                   <li class="navigation-item">

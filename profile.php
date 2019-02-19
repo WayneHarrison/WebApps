@@ -1,5 +1,21 @@
 <?php
 session_start();
+//php for retrieving user details
+$connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
+mysqli_error($connection));
+//Set ID
+$uID = $_SESSION['usersID'];
+
+$sql = "SELECT * FROM user WHERE userID='$uID'";
+$result= mysqli_query($connection, "SELECT * FROM user WHERE userID= ".$uID );
+if(mysqli_num_rows($result)) {
+  $userResult = mysqli_fetch_array($result);
+}
+
+
+
+
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -19,6 +35,8 @@ session_start();
   <link rel="stylesheet" href="css/milligram.css.map">
   <link rel="stylesheet" href="css/milligram.min.css.map">
   <link rel="stylesheet" href="css/main.css">
+  <!-- Script-->
+  <script type="text/javascript" src="js/myJS.js"></script>
 </head>
 <body>
   <main class ="wrapper">
@@ -51,29 +69,26 @@ session_start();
                 </li>';
               }
           ?>
+          ?>
         </div>
         </div>
       </ol>
       </section>
     </nav>
-    <header class="header">
+    <header class="header" name="top">
       <section class="container">
-      <div class="MyJumbo">
-        <h1 class="title">Custom Imports</h1>
-        <?php
-        if (isset($_SESSION['usersID'])){
-          echo '<p class="description">You are logged in.</p>';
-        } else {
-          echo '<p class="description">You are logged out.</p>';
-        }
-
-        ?>
-        <img class="profile" src="images/moostang.png">
-        </br>
+      <div class="divcard">
+          <h2 class="title">Your Profile</h2>
+          <p class="description">Welcome <?php echo $userResult['userName'];?>.</p>
+          <h3 class="title">Your Info</h3>
+          <ul>
+            <li>Address: <?php echo $userResult['userAddress'];?></li>
+            <li>Postcode: <?php echo $userResult['userPostCode']; ?> </li>
+            <li>Phone: <?php echo $userResult['userPhone']; ?></li>
+            <li>Date of Birth: <?php echo $userResult['userDOB'];?></li>
+          </ul>
+          <button class="button button-outline">Edit Details</button>
       </div>
-    </br>
-  </br>
-</br>
     </section>
     </header>
   </main>

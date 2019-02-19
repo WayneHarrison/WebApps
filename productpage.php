@@ -52,6 +52,9 @@ session_start();
             <?php
             if(isset($_SESSION['usersID'])){
               echo' <li class="navigation-item">
+                      <a class="navigation-link" href="profile.php">Profile</a>
+                    </li>
+                    <li class="navigation-item">
                       <a class="navigation-link" href="products.php">Products</a>
                     </li>
                     <li class="navigation-item">
@@ -59,13 +62,13 @@ session_start();
                     </li>'; }
                 else {
                   echo'<li class="navigation-item">
-                  <a class="navigation-link" href="login.php">Login</a>
+                    <a class="navigation-link" href="login.php">Login</a>
                   </li>
                   <li class="navigation-item">
-                  <a class="navigation-link" href="register.php">Register</a>
+                    <a class="navigation-link" href="register.php">Register</a>
                   </li>';
-              }
-          ?>
+                }
+            ?>
           </div>
         </div>
       </ol>
