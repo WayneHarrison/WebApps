@@ -3,13 +3,6 @@ session_start();
 //php for retrieving user details
 $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
 mysqli_error($connection));
-//Set ID
-$uID = $_SESSION['usersID'];
-//selects Results
-$sql = "SELECT * FROM user WHERE userID='$uID'";
-$result= mysqli_query($connection, "SELECT * FROM user WHERE userID= ".$uID );
-if(mysqli_num_rows($result)) {
-  $userResult = mysqli_fetch_array($result);
 }
 
 
@@ -78,17 +71,20 @@ if(mysqli_num_rows($result)) {
     <header class="header" name="top">
       <section class="container">
       <div class="divcard">
-          <h2 class="title">Your Profile</h2>
-          <p class="description">Welcome <?php echo $userResult['userName'];?>.</p>
-          <h3 class="title">Your Info</h3>
-          <form method="post" action="productpage.php?ID=<?php echo $userResult['userID']; ?>">
-          <ul>
-            <li>Address: <?php echo $userResult['userAddress'];?></li>
-            <li>Postcode: <?php echo $userResult['userPostCode']; ?> </li>
-            <li>Phone: <?php echo $userResult['userPhone']; ?></li>
-            <li>Date of Birth: <?php echo $userResult['userDOB'];?></li>
-          </ul>
-          <button class="button button-outline" type="submit" name="editDetails">Edit Details</button>
+          <h2 class="title">Edit your details</h2>
+          <h3 class="title">Change desired details below and press submit.</h3>
+        <form>
+          <fieldset>
+            <label for="addressField">Address</label>
+            <input placeholder="1 Fakestreet" id="addressField" type="text" name="address">
+            <label for="pcField">Postcode</label>
+            <input id="pcField" type="text" name="postcode">
+            <label for="phoneField">Phone Number</label>
+            <input id="phoneField" type="text" name="phone">
+            <label for="dobField">Date of Birth</label>
+            <input placeholder="DDMMYY" id="dobField" type="text" name="dob">
+            <button class="button button-outline">Submit</button>
+          </fieldset>
         </form>
       </div>
     </section>
