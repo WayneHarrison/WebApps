@@ -63,7 +63,7 @@ session_start();
       <section class="container">
       <div class="divcard">
           <h2 class="title">Edit your details</h2>
-          <h3 class="title">Change desired details below and press submit.</h3>
+          <h3 class="title">Please fill in all boxes below and then press submit.</h3>
           <?php
           if(isset($_GET['error'])){
             if($_GET['error'] == "emptyfields") {
