@@ -69,7 +69,6 @@ if(mysqli_num_rows($result)) {
                 </li>';
               }
           ?>
-          ?>
         </div>
         </div>
       </ol>
@@ -81,15 +80,13 @@ if(mysqli_num_rows($result)) {
           <h2 class="title">Your Profile</h2>
           <p class="description">Welcome <?php echo $userResult['userName'];?>.</p>
           <h3 class="title">Your Info</h3>
-          <form method="post" action="profileedit.php?ID=<?php echo $userResult['userID']; ?>">
           <ul>
             <li>Address: <?php echo $userResult['userAddress'];?></li>
             <li>Postcode: <?php echo $userResult['userPostCode']; ?> </li>
             <li>Phone: <?php echo $userResult['userPhone']; ?></li>
             <li>Date of Birth: <?php echo $userResult['userDOB'];?></li>
           </ul>
-          <button class="button button-outline" type="submit" name="editDetails">Edit Details</button>
-        </form>
+        <a href="profileedit.php">  <button class="button button-outline" type="submit" name="editDetails">Edit Details</button></a>
       </div>
     </section>
     </header>
