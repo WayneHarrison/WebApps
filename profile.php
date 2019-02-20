@@ -85,6 +85,13 @@ if(mysqli_num_rows($result)) {
             <li>Postcode: <?php echo $userResult['userPostCode']; ?> </li>
             <li>Phone: <?php echo $userResult['userPhone']; ?></li>
             <li>Date of Birth: <?php echo $userResult['userDOB'];?></li>
+            <?php if($userResult['userSaveSearch'] > 0):
+              ?>
+            <li> Favourite search: <?php echo $userResult['userSaveSearch']; ?>
+              <?php
+            else: echo '<li>No saved search.</li>' ;
+          endif;
+          ?>
           </ul>
         <a href="profileedit.php">  <button class="button button-outline">Edit Details</button></a>
       </div>
