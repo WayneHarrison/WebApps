@@ -85,7 +85,7 @@ if(mysqli_num_rows($result)) {
             <li>Postcode: <?php echo $userResult['userPostCode']; ?> </li>
             <li>Phone: <?php echo $userResult['userPhone']; ?></li>
             <li>Date of Birth: <?php echo $userResult['userDOB'];?></li>
-            <?php if($userResult['userSaveSearch'] > 0):
+            <?php if(isset($userResult['userSaveSearch'])):
               ?>
             <li> Favourite search: <?php echo $userResult['userSaveSearch']; ?>
               <?php
