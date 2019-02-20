@@ -60,10 +60,16 @@ session_start();
       <section class="container">
       <div class="MyJumbo">
           <h1 class="title">Current Stock</h1>
-          <form action="search.php" method="POST">
-            <input type="text" name="search" placeholder="Search">
-            <button class="button button-outline navigation-item" name="submit-search" type="submit">Search</button>
-          </form>
+          <div class="row">
+            <form action="search.php" method="POST">
+              <div class="column column-80">
+                <input type="text" name="search" placeholder="Search">
+              </div>
+              <div class="column column-20">
+                <button class="button button-outline navigation-item" name="submit-search" type="submit">Search</button>
+              </div>
+            </form>
+          </row>
             <?php
                   $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
                   mysqli_error($connection));
