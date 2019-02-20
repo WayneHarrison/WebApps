@@ -77,7 +77,8 @@ session_start();
             }
           }
           else if ($_GET["edit"] == "success") {
-            echo '<p class="signupsuccess">Edit successful!</p>';
+            echo '<p class="signupsuccess">Edit successful!</p>
+                  <a class="link" href="profile.php"><p>Go Back</p></a>';
           }
           ?>
         <form action="includes/edit.inc.php" method="post">
