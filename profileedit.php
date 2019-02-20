@@ -90,6 +90,8 @@ session_start();
             <input id="phoneField" type="text" name="editPhone">
             <label for="dobField">Date of Birth</label>
             <input placeholder="DDMMYY" id="dobField" type="text" name="editDob">
+            <label for="dobField">Saved Search</label>
+            <input id="savedSearchField" type="text" name="editSearch">
             <button class="button button-outline" name="editButton">Submit</button>
           </fieldset>
         </form>

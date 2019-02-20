@@ -9,8 +9,9 @@ if (isset($_POST['editButton'])){
   $postcode = $_POST['editPostcode'];
   $phone = $_POST['editPhone'];
   $dob = $_POST['editDob'];
+  $ssearch = $_POST['editSearch'];
 
-  if (empty($address) || empty($postcode) || empty($dob) || empty($phone)){
+  if (empty($address) || empty($postcode) || empty($dob) || empty($phone)|| empty($ssearch)){
       header("Location: ../profileedit.php?error=emptyfields&name=".$name."&address".$address."&postcode".$postcode."&email".$email);
       exit();
     }
@@ -23,14 +24,14 @@ if (isset($_POST['editButton'])){
       exit();
     }
     else {
-      $sql = "UPDATE user SET userAddress = ?, userPostCode = ?, userDOB = ? , userPhone = ? WHERE userID = $uID";
+      $sql = "UPDATE user SET userAddress = ?, userPostCode = ?, userDOB = ? , userPhone = ?, userSaveSearch WHERE userID = $uID";
       $stmt = mysqli_stmt_init($conn);
       if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("Location: ../profileedit.php?error=SQLError&".$uID);
         exit();
       }
       else {
-        mysqli_stmt_bind_param($stmt, "ssss", $address, $postcode, $dob, $phone);
+        mysqli_stmt_bind_param($stmt, "sssss", $address, $postcode, $dob, $phone, $ssearch);
         mysqli_stmt_execute($stmt);
         header("Location: ../profileedit.php?edit=success");
         exit();
