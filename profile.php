@@ -89,7 +89,7 @@ if(mysqli_num_rows($result)) {
               ?>
             <form action="favouritesearch.php" method="post">
               <li> Favourite search: <?php echo $userResult['userSaveSearch'];?></li>
-              <button class="button button-outline" name="favourite-search" type="submit"></button>
+              <button class="button button-outline" name="favourite-search" type="submit">Search</button>
             </form>
               <?php
             else: echo '<li>No saved search.</li>' ;
