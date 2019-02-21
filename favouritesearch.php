@@ -83,7 +83,6 @@ if(mysqli_num_rows($result)) {
 
 
                   ?>
-                  <h1><?php echo $search;?></h1>
                       <div class="row">
                       <div class="column column-100">
                         <div class = "divcard">
@@ -106,7 +105,7 @@ if(mysqli_num_rows($result)) {
                 </br>
                 <?php
                 endwhile;
-              else: echo $search;
+              else: echo '<h2>No results matching your search!</h2>';
                 endif;
                 endif;
                 ?>
