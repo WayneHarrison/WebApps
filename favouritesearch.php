@@ -62,10 +62,10 @@ session_start();
           <h1 class="title">Favourite Search Results</h1>
           <h2>Go <a class="link" href="profile.php">back.</a></h2>
             <?php
+                  $uID = $_SESSION['usersID'];
                   $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
                   mysqli_error($connection));
                     if (isset($_POST['favourite-search'])):
-                      $uID = $_SESSION['usersID'];
                       $favourite = "SELECT * FROM user WHERE userID = $uID";
                       $fsearch = $favourite['userSaveSearch'];
                       $search = mysqli_real_escape_string($connection, $fsearch);
@@ -79,6 +79,7 @@ session_start();
 
 
                   ?>
+                  <h1><?php echo $fsearch;?></h1>
                       <div class="row">
                       <div class="column column-100">
                         <div class = "divcard">
