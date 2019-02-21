@@ -87,7 +87,10 @@ if(mysqli_num_rows($result)) {
             <li>Date of Birth: <?php echo $userResult['userDOB'];?></li>
             <?php if(isset($userResult['userSaveSearch'])):
               ?>
-            <li> Favourite search: <?php echo $userResult['userSaveSearch']; ?>
+            <form action="favouritesearch.php" method="post">
+              <li> Favourite search: <?php echo $userResult['userSaveSearch'];?></li>
+              <button class="button button-outline" name="favourite-search" type="submit"></button>
+            </form>
               <?php
             else: echo '<li>No saved search.</li>' ;
           endif;
