@@ -101,7 +101,7 @@ session_start();
                 </br>
                 <?php
                 endwhile;
-                else: echo'<h2>No results matching your search!</h2>';
+              else: echo $favourite;
                 endif;
                 endif;
                 ?>
