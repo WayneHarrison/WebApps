@@ -66,8 +66,9 @@ session_start();
                   mysqli_error($connection));
                     if (isset($_POST['favourite-search'])):
                       $uID = $_SESSION['usersID'];
-                      $favourite = "SELECT userSaveSearch FROM user WHERE userID = $uID";
-                      $search = mysqli_real_escape_string($connection, $favourite);
+                      $favourite = "SELECT * FROM user WHERE userID = $uID";
+                      $fsearch = $favourite['userSaveSearch'];
+                      $search = mysqli_real_escape_string($connection, $fsearch);
                       $sql = "SELECT * FROM car WHERE carName LIKE '%$search%' OR carColor LIKE '%$search%' OR carEngine LIKE '%$search%'
                        OR carFuel LIKE '%$search%' OR carGearbox LIKE '%$search%'";
                       $result = mysqli_query($connection, $sql);
