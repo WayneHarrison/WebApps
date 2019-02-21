@@ -66,9 +66,8 @@ session_start();
                   $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
                   mysqli_error($connection));
                     if (isset($_POST['favourite-search'])):
-                      $favourite = "SELECT * FROM user WHERE userID = $uID";
-                      $fsearch = $favourite['userSaveSearch'];
-                      $search = mysqli_real_escape_string($connection, $fsearch);
+                      $favourite = "SELECT userSaveSearch FROM user WHERE userID = $uID";
+                      $search = mysqli_real_escape_string($connection, $favourite);
                       $sql = "SELECT * FROM car WHERE carName LIKE '%$search%' OR carColor LIKE '%$search%' OR carEngine LIKE '%$search%'
                        OR carFuel LIKE '%$search%' OR carGearbox LIKE '%$search%'";
                       $result = mysqli_query($connection, $sql);
@@ -79,7 +78,7 @@ session_start();
 
 
                   ?>
-                  <h1><?php echo $fsearch;?></h1>
+                  <h1><?php echo $favourite;?></h1>
                       <div class="row">
                       <div class="column column-100">
                         <div class = "divcard">
