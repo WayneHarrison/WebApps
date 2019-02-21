@@ -95,7 +95,7 @@ if(mysqli_num_rows($result)) {
                             </p>
                             <img src="<?php echo $row['carPicture']; ?>"/>
                             <div>
-                            <button class="button button-outline float-center" name="viewProduct" type="submit">View Product</button>
+                            <button class="button button-outline float-center" name="fviewProduct" type="submit">View Product</button>
                           </div>
                           </form>
                         </div>

@@ -82,7 +82,11 @@ session_start();
             </h1>
             <h2><?php echo $product['carPrice'];?></h2>
             <img src="<?php echo $product['carPicture'];?>">
-            <p>Go <a class="link" href="products.php">back.</a></p>
+            <?php if(isset($_POST['fviewProduct'])){
+              echo'<p>Go <a class="link" href="favouritesearch.php">back.</a></p>';
+            }else{
+              echo'<p>Go <a class="link" href="products.php">back.</a></p>';
+            }?>
         </div>
       </section>
     </header>
