@@ -25,8 +25,7 @@ session_start();
     <nav class="navigation">
       <section class="container">
         <a class="navigation-title" href="index.php"><h1 class="title">WebApps</h1></a>
-          <ol class="navigation-list float-right">
-            <div class="dropdown">
+            <div class="dropdown navigation-list float-right">
               <p class="navigation-item">Menu</p>
               <!--Dropdown Navigation-->
                 <div class="dropdown-content">
@@ -56,7 +55,6 @@ session_start();
                       ?>
                 </div>
             </div>
-          </ol>
       </section>
     </nav>
     <header class="header">
