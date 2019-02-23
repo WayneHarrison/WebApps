@@ -118,6 +118,7 @@ session_start();
               <br>
             <br>
           <br>
+        </div>
       </section>
     </header>
   </main>
