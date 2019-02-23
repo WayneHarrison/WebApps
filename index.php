@@ -23,42 +23,40 @@ session_start();
   <body>
     <main class ="wrapper">
       <nav class="navigation">
-        <section class="container">
-          <a class="navigation-title" href="index.php"><h1 class="title">WebApps</h1></a>
-            <ol class="navigation-list float-right">
-              <div class="dropdown">
-                <p class="navigation-item">Menu</p>
-                <!--Dropdown Navigation-->
-                  <div class="dropdown-content">
-                    <?php
-                      //If the session is set print out links to profile, products and the logout
-                      if(isset($_SESSION['usersID'])){
+      <section class="container">
+        <a class="navigation-title" href="index.php"><h1 class="title">WebApps</h1></a>
+            <div class="dropdown navigation-list float-right">
+              <p class="navigation-item">Menu</p>
+              <!--Dropdown Navigation-->
+                <div class="dropdown-content">
+                  <?php
+                    //If the session is set print out links to profile, products and the logout
+                    if(isset($_SESSION['usersID'])){
+                      echo'
+                      <li class="navigation-item">
+                          <a class="navigation-link" href="profile.php">Profile</a>
+                      </li>
+                      <li class="navigation-item">
+                          <a class="navigation-link" href="products.php">Products</a>
+                      </li>
+                      <li class="navigation-item">
+                          <a class="navigation-link" href="includes/logout.inc.php">Logout</a>
+                      </li>'; }
+                      else {
+                        //If there is no set session show login and register
                         echo'
-                        <li class="navigation-item">
-                            <a class="navigation-link" href="profile.php">Profile</a>
-                        </li>
-                        <li class="navigation-item">
-                            <a class="navigation-link" href="products.php">Products</a>
-                        </li>
-                        <li class="navigation-item">
-                            <a class="navigation-link" href="includes/logout.inc.php">Logout</a>
-                        </li>'; }
-                        else {
-                          //If there is no set session show login and register
-                          echo'
-                        <li class="navigation-item">
-                            <a class="navigation-link" href="login.php">Login</a>
-                        </li>
-                        <li class="navigation-item">
-                            <a class="navigation-link" href="register.php">Register</a>
-                        </li>';
-                        }
-                        ?>
-                  </div>
-              </div>
-            </ol>
-        </section>
-      </nav>
+                      <li class="navigation-item">
+                          <a class="navigation-link" href="login.php">Login</a>
+                      </li>
+                      <li class="navigation-item">
+                          <a class="navigation-link" href="register.php">Register</a>
+                      </li>';
+                      }
+                      ?>
+                </div>
+            </div>
+      </section>
+    </nav>
       <!--Content Start-->
       <header class="header">
         <section class="container">
