@@ -97,17 +97,17 @@ session_start();
                             </div>
                           </div>
                         </div>
-                        </br>
-                      </br>
+                        <br>
+                      <br>
                       <?php
                       endwhile;
                     endif;
                   endif;
                   ?>
-                  </br>
-                </br>
-              </br>
-            </br>
+                  <br>
+                <br>
+              <br>
+            <br>
       </section>
     </header>
   </main>

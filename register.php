@@ -122,8 +122,8 @@ session_start();
         </div>
       </div>
     </div>
-    </br>
-  </br>
+    <br>
+  <br>
   </div>
   </main>
 </body>

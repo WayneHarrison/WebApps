@@ -105,8 +105,8 @@ session_start();
                           </div>
                         </div>
                       </div>
-                      </br>
-                    </br>
+                      <br>
+                    <br>
                     <?php
                     //Ends ifs and else
                     endwhile;
@@ -114,10 +114,10 @@ session_start();
                     endif;
                     endif;
                     ?>
-                </br>
-              </br>
-            </br>
-          </br>
+                <br>
+              <br>
+            <br>
+          <br>
       </section>
     </header>
   </main>

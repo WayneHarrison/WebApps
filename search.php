@@ -94,18 +94,18 @@ session_start();
                         </div>
                       </div>
                     </div>
-                    </br>
-                    </br>
+                    <br>
+                    <br>
                     <?php
                     endwhile;
                     else: echo'<h2>No results matching your search!</h2>';
                     endif;
                     endif;
                     ?>
-                    </br>
-                  </br>
-                </br>
-              </br>
+                    <br>
+                  <br>
+                <br>
+              <br>
         </div>
       </section>
     </header>

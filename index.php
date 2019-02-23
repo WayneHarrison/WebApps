@@ -73,12 +73,12 @@ session_start();
               }
 
               ?>
-              <img class="profile" src="images/moostang.png">
-            </br>
+              <img class="profile" src="images/moostang.png" alt="#">
+            <br>
           </div>
-              </br>
-            </br>
-          </br>
+              <br>
+            <br>
+          <br>
         </section>
       </header>
     </main>
