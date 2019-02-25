@@ -5,8 +5,6 @@ if (!ISSET($_SESSION['usersID'])){
 }
 $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
 mysqli_error($connection));
-$uID = $_SESSION['usersID'];
-$savesearch = $_POST['search'];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -74,12 +72,14 @@ $savesearch = $_POST['search'];
             <?php
                 if (isset($_POST['submit-search'])):
                   //Search
+                  $uID = $_SESSION['usersID'];
+                  $savesearch = $_POST['search'];
                   $searchsql = "INSERT INTO search (userID, searchInfo) VALUES (?, ?)";
                   $stmt = mysqli_stmt_init($connection);
                   if (!mysqli_stmt_prepare($stmt, $searchsql)) {
                     echo '<p>Unable to save search.</p>';
                   } else {
-                    mysqli_stmt_bind_param($searchstmt, "is", $uID, $savesearch);
+                    mysqli_stmt_bind_param($searchstmt, "ss", $uID, $savesearch);
                     mysqli_stmt_execute($stmt);
                     echo '<p>Search saved!</p>';
                   }
