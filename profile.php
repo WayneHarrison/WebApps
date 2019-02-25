@@ -116,7 +116,7 @@ if (!ISSET($_SESSION['usersID'])){
               <p class="description"><?php echo $userResult2['searchInfo']; ?></p>
               <?php
             endwhile;
-            else: echo '<p>No saved Searches</p>';
+          else: echo '<p>No searches on record.</p>';
             endif;
               ?>
               <h4 class="title">Your Most Common Search</h4>
@@ -130,6 +130,7 @@ if (!ISSET($_SESSION['usersID'])){
                   foreach($datas AS $data){
                     echo $data['searchInfo'];
                   }
+                else: echo'<p>No common search.</p>'
                 endif;
               endwhile;
               ?>
