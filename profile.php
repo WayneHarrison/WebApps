@@ -121,18 +121,21 @@ if (!ISSET($_SESSION['usersID'])){
               ?>
               <h4 class="title">Your Most Common Search</h4>
               <?php
-              $sql3 ="SELECT * FROM search WHERE userID=$uID GROUP BY searchInfo ORDER BY COUNT(*) Desc limit 1";
+              $sql3 ="SELECT * FROM search WHERE userID= $uID GROUP BY searchInfo ORDER BY COUNT(*)Desc limit 1";
               $result3= mysqli_query($connection, $sql3);
               $datas = array();
-              if (mysqli_num_rows($result3)>0):
-                while($row = mysqli_fetch_assoc($result3)):
-                  $datas[]=$row;
-                  foreach($datas AS $data){
-                    echo $data['searchInfo'];
+              if($result3)
+                if (mysqli_num_rows($result3) > 0){
+                  while($row = mysqli_fetch_assoc($result3)){
+                    $datas[]=$row;
+                    foreach($datas AS $data){
+                      echo $data['searchInfo'];
+                    }
                   }
-                else: echo'<p>No common search.</p>';
-                endif;
-              endwhile;
+                } else {
+                echo '<p>No common search.</p>';
+                }
+              }
               ?>
 
             </div>
