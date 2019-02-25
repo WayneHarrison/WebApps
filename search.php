@@ -1,5 +1,21 @@
 <?php
 session_start();
+$connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
+mysqli_error($connection));
+$uID = $_SESSION['usersID'];
+//Save Search
+  $savesearch = $_POST['search'];
+  $searchsql = "INSERT INTO search (userID, searchInfo) VALUES (?, ?)";
+  $searchstmt = mysqli_stmt_init($conn);
+  if (!mysqli_stmt_prepare($searchstmt, $searchsql)) {
+    header("Location: ../search.php?error=SQLError");
+    exit(); }
+    else {
+      mysqli_stmt_bind_param($searchstmt, "ss", $uID, $savesearch);
+      mysqli_stmt_execute($searchstmt);
+      header("Location: ../search.php?save=success");
+      exit();
+    }
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -65,9 +81,8 @@ session_start();
           <h1 class="title">Search Results</h1>
           <h2>Go <a class="link" href="products.php">back.</a></h2>
             <?php
-              $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
-              mysqli_error($connection));
                 if (isset($_POST['submit-search'])):
+                  //Search
                   $search = mysqli_real_escape_string($connection, $_POST['search']);
                   $sql = "SELECT * FROM car WHERE carName LIKE '%$search%' OR carColor LIKE '%$search%' OR carEngine LIKE '%$search%'
                   OR carFuel LIKE '%$search%' OR carGearbox LIKE '%$search%'";
