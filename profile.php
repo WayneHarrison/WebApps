@@ -79,27 +79,47 @@ if (!ISSET($_SESSION['usersID'])){
     <!--Content Start-->
     <header class="header" name="top">
       <section class="container">
-        <div class="divcard">
-          <h2 class="title">Your Profile</h2>
-          <p class="description">Welcome <?php echo $userResult['userName'];?>.</p>
-          <h3 class="title">Your Info</h3>
-          <ul>
-            <li>Address: <?php echo $userResult['userAddress'];?></li>
-            <li>Postcode: <?php echo $userResult['userPostCode']; ?> </li>
-            <li>Phone: <?php echo $userResult['userPhone']; ?></li>
-            <li>Date of Birth: <?php echo $userResult['userDOB'];?></li>
-              <?php if(isset($userResult['userSaveSearch'])):
-                ?>
-                <form action="favouritesearch.php" method="post">
-                  <li> Favourite search: <?php echo $userResult['userSaveSearch'];?></li>
-                  <button class="button button-outline" name="favourite-search" type="submit">Search</button>
-                </form>
+        <div class="row">
+          <div class="column column-50">
+            <div class="divcard">
+              <h2 class="title">Your Profile</h2>
+              <p class="description">Welcome <?php echo $userResult['userName'];?>.</p>
+              <h3 class="title">Your Info</h3>
+              <ul>
+                <li>Address: <?php echo $userResult['userAddress'];?></li>
+                <li>Postcode: <?php echo $userResult['userPostCode']; ?> </li>
+                <li>Phone: <?php echo $userResult['userPhone']; ?></li>
+                <li>Date of Birth: <?php echo $userResult['userDOB'];?></li>
+                  <?php if(isset($userResult['userSaveSearch'])):
+                    ?>
+                    <form action="favouritesearch.php" method="post">
+                      <li> Favourite search: <?php echo $userResult['userSaveSearch'];?></li>
+                      <button class="button button-outline" name="favourite-search" type="submit">Search</button>
+                    </form>
+                    <?php
+                    else: echo '<li>No saved search.</li>' ;
+                    endif;
+                    ?>
+                  </ul>
+                  <a href="profileedit.php">  <button class="button button-outline">Edit Details</button></a>
+            </div>
+          </div>
+          <div class="column column-50">
+            <div class="divcard">
+            <?php
+            $sql2 = "SELECT * FROM search WHERE userID='$uID'";
+            $result2= mysqli_query($connection, "SELECT * FROM search WHERE userID=".$uID );
+            if(mysqli_num_rows($result2) > 0) :
+              while($userResult2 = mysqli_fetch_assoc($result2)):
+            ?>
+              <p class="description"><?php echo $userResult2['searchInfo']; ?></p>
               <?php
-                else: echo '<li>No saved search.</li>' ;
-                endif;
+            endwhile;
+            else: echo '<p>No saved Searches</p>';
+            endif;
               ?>
-          </ul>
-          <a href="profileedit.php">  <button class="button button-outline">Edit Details</button></a>
+            </div>
+          </div>
         </div>
       </section>
     </header>
