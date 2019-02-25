@@ -79,7 +79,7 @@ mysqli_error($connection));
                   if (!mysqli_stmt_prepare($stmt, $searchsql)) {
                     echo '<p>Unable to save search.</p>';
                   } else {
-                    mysqli_stmt_bind_param($searchstmt, "ss", $uID, $savesearch);
+                    mysqli_stmt_bind_param($stmt, "is", $uID, $savesearch);
                     mysqli_stmt_execute($stmt);
                     echo '<p>Search saved!</p>';
                   }
