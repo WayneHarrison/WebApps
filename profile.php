@@ -130,7 +130,7 @@ if (!ISSET($_SESSION['usersID'])){
                   foreach($datas AS $data){
                     echo $data['searchInfo'];
                   }
-                else: echo'<p>No common search.</p>'
+                else: echo'<p>No common search.</p>';
                 endif;
               endwhile;
               ?>
