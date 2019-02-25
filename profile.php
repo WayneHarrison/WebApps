@@ -114,6 +114,7 @@ if (!ISSET($_SESSION['usersID'])){
               while($userResult2 = mysqli_fetch_assoc($result2)):
             ?>
               <p class="description"><?php echo $userResult2['searchInfo']; ?></p>
+              <p class="description"><?php echo $userResult2['searchInfo']; ?></p>
               <?php
             endwhile;
           else: echo '<p>No searches on record.</p>';
