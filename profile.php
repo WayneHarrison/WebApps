@@ -106,6 +106,7 @@ if (!ISSET($_SESSION['usersID'])){
           </div>
           <div class="column column-50">
             <div class="divcard">
+            <h2 class="title">Your Searches</h2>
             <?php
             $sql2 = "SELECT * FROM search WHERE userID='$uID'";
             $result2= mysqli_query($connection, "SELECT * FROM search WHERE userID=".$uID );
@@ -118,6 +119,7 @@ if (!ISSET($_SESSION['usersID'])){
             else: echo '<p>No saved Searches</p>';
             endif;
               ?>
+              <h2 class="title">Your Most Common Searches</h2>
             </div>
           </div>
         </div>
