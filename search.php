@@ -6,19 +6,7 @@ if (!ISSET($_SESSION['usersID'])){
 $connection =  mysqli_connect("ixqxr3ajmyapuwmi.cbetxkdyhwsb.us-east-1.rds.amazonaws.com", "cxvgnzbdx933nx2c", "pzgz4db5bifleb6r", "ejyc09067f68qv1j") or die("Connection Failed" .
 mysqli_error($connection));
 $uID = $_SESSION['usersID'];
-//Save Search
-  $savesearch = $_POST['search'];
-  $searchsql = "INSERT INTO search (userID, searchInfo) VALUES (?, ?)";
-  $searchstmt = mysqli_stmt_init($conn);
-  if (!mysqli_stmt_prepare($searchstmt, $searchsql)) {
-    echo '<p>Could Not Save Search</p>';
-    exit(); }
-    else {
-      mysqli_stmt_bind_param($searchstmt, "ss", $uID, $savesearch);
-      mysqli_stmt_execute($searchstmt);
-      echo '<p>Search Was Saved</p>';
-      exit();
-    }
+$savesearch = $_POST['search'];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -86,6 +74,16 @@ $uID = $_SESSION['usersID'];
             <?php
                 if (isset($_POST['submit-search'])):
                   //Search
+                  $searchsql = "INSERT INTO search (userID, searchInfo) VALUES ?, ?";
+                  $searchstmt = mysqli_stmt_init($connection);
+                  if (!mysqli_stmt_prepare($searchstmt, $searchsql)) {
+                    echo '<p>Unable to save search.</p>';
+                  } else {
+                    mysqli_stmt_bind_param($searchstmt, "is", $uID, $savesearch);
+                    mysqli_stmt_execute($stmt);
+                    echo '<p>Search saved!</p>';
+                    exit();
+                  }
                   $search = mysqli_real_escape_string($connection, $_POST['search']);
                   $sql = "SELECT * FROM car WHERE carName LIKE '%$search%' OR carColor LIKE '%$search%' OR carEngine LIKE '%$search%'
                   OR carFuel LIKE '%$search%' OR carGearbox LIKE '%$search%'";
