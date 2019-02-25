@@ -119,7 +119,21 @@ if (!ISSET($_SESSION['usersID'])){
             else: echo '<p>No saved Searches</p>';
             endif;
               ?>
-              <h2 class="title">Your Most Common Searches</h2>
+              <h4 class="title">Your Most Common Search</h4>
+              <?php
+              $sql3 ="SELECT * FROM search WHERE userID=$uID GROUP BY searchInfo ORDER BY COUNT(*) Desc limit 1";
+              $result3= mysqli_query($connection, $sql3);
+              $datas = array();
+              if (mysqli_num_rows($result3)>0):
+                while($row = mysqli_fetch_assoc($result3)):
+                  $datas[]=$row;
+                  foreach($datas AS $data){
+                    echo $data['searchInfo'];
+                  }
+                endif;
+              endwhile;
+              ?>
+
             </div>
           </div>
         </div>
