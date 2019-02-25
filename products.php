@@ -1,4 +1,7 @@
 <?php
+if (!ISSET($_SESSION)){
+  header("Location: ../login.php");
+}
 session_start();
 ?>
 <!DOCTYPE HTML>
