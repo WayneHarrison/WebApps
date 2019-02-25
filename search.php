@@ -8,12 +8,12 @@ $uID = $_SESSION['usersID'];
   $searchsql = "INSERT INTO search (userID, searchInfo) VALUES (?, ?)";
   $searchstmt = mysqli_stmt_init($conn);
   if (!mysqli_stmt_prepare($searchstmt, $searchsql)) {
-    header("Location: ../search.php?error=SQLError");
+    echo '<p>Could Not Save Search</p>';
     exit(); }
     else {
       mysqli_stmt_bind_param($searchstmt, "ss", $uID, $savesearch);
       mysqli_stmt_execute($searchstmt);
-      header("Location: ../search.php?save=success");
+      echo '<p>Search Was Saved</p>';
       exit();
     }
 ?>
