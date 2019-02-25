@@ -80,11 +80,11 @@ if (!ISSET($_SESSION['usersID'])){
     <header class="header" name="top">
       <section class="container">
         <div class="row">
-          <div class="column column-33">
+          <div class="column column-50">
             <div class="divcard">
-              <h2 class="title">Your Profile</h2>
+              <h4 class="title">Your Profile</h4>
               <p class="description">Welcome <?php echo $userResult['userName'];?>.</p>
-              <h3 class="title">Your Info</h3>
+              <h5 class="title">Your Info</h5>
               <ul>
                 <li>Address: <?php echo $userResult['userAddress'];?></li>
                 <li>Postcode: <?php echo $userResult['userPostCode']; ?> </li>
@@ -104,9 +104,9 @@ if (!ISSET($_SESSION['usersID'])){
                   <a href="profileedit.php">  <button class="button button-outline">Edit Details</button></a>
             </div>
           </div>
-          <div class="column column-33">
+          <div class="column column-50">
             <div class="divcard">
-            <h2 class="title">Your Searches</h2>
+            <h4 class="title">Your Searches</h4>
             <?php
             $sql2 = "SELECT * FROM search WHERE userID='$uID'";
             $result2= mysqli_query($connection, "SELECT * FROM search WHERE userID=".$uID );
@@ -119,10 +119,6 @@ if (!ISSET($_SESSION['usersID'])){
           else: echo '<p>No searches on record.</p>';
             endif;
               ?>
-            </div>
-          </div>
-          <div class="column column-33">
-            <div class="divcard">
               <h4 class="title">Your Most Common Search</h4>
               <?php
               $sql3 ="SELECT * FROM search WHERE userID= $uID GROUP BY searchInfo ORDER BY COUNT(*)Desc limit 1";
@@ -141,8 +137,6 @@ if (!ISSET($_SESSION['usersID'])){
                 }
               }
               ?>
-            </div>
-            </div>
             </div>
           </div>
         </div>
