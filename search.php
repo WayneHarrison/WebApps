@@ -74,9 +74,9 @@ $savesearch = $_POST['search'];
             <?php
                 if (isset($_POST['submit-search'])):
                   //Search
-                  $searchsql = "INSERT INTO search (userID, searchInfo) VALUES ?, ?";
-                  $searchstmt = mysqli_stmt_init($connection);
-                  if (!mysqli_stmt_prepare($searchstmt, $searchsql)) {
+                  $searchsql = "INSERT INTO search (userID, searchInfo) VALUES (?, ?)";
+                  $stmt = mysqli_stmt_init($connection);
+                  if (!mysqli_stmt_prepare($stmt, $searchsql)) {
                     echo '<p>Unable to save search.</p>';
                   } else {
                     mysqli_stmt_bind_param($searchstmt, "is", $uID, $savesearch);
