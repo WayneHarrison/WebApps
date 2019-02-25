@@ -83,7 +83,7 @@ mysqli_error($connection));
                   while($row = mysqli_fetch_assoc($result3)){
                     $datas[]=$row;
                     foreach($datas AS $data){
-                      echo "<p>Favourite search:".$data['searchInfo'].".</p>";
+                      echo "<p>Favourite search: ".$data['searchInfo'].".</p>";
                     }
                   }
                 } else {
