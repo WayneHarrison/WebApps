@@ -82,7 +82,6 @@ $savesearch = $_POST['search'];
                     mysqli_stmt_bind_param($searchstmt, "is", $uID, $savesearch);
                     mysqli_stmt_execute($stmt);
                     echo '<p>Search saved!</p>';
-                    exit();
                   }
                   $search = mysqli_real_escape_string($connection, $_POST['search']);
                   $sql = "SELECT * FROM car WHERE carName LIKE '%$search%' OR carColor LIKE '%$search%' OR carEngine LIKE '%$search%'
