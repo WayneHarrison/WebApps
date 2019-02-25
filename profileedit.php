@@ -1,5 +1,8 @@
 <?php
 session_start();
+if (!ISSET($_SESSION['usersID'])){
+  header("Location: ../login.php");
+}
 //php for retrieving user details
 ?>
 <!DOCTYPE HTML>

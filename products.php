@@ -1,8 +1,8 @@
 <?php
-if (!ISSET($_SESSION)){
+session_start();
+if (!ISSET($_SESSION['usersID'])){
   header("Location: ../login.php");
 }
-session_start();
 ?>
 <!DOCTYPE HTML>
 <html>
