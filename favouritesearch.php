@@ -77,7 +77,7 @@ if (!ISSET($_SESSION['usersID'])){
       <section class="container">
         <div class="MyJumbo">
           <h1 class="title">Favourite Search Results</h1>
-          <h2>Go<a class="link" href="profile.php">back.</a></h2>
+          <h2>Go<a class="link" href="profile.php"> back.</a></h2>
             <?php
                 //Favourite Search Start
                 if (isset($_POST['favourite-search'])):
